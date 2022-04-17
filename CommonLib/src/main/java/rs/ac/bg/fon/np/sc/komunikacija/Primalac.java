@@ -4,8 +4,6 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.net.Socket;
 
-import com.google.gson.JsonObject;
-
 public class Primalac {
 	Socket socket;
 
@@ -13,11 +11,11 @@ public class Primalac {
 		this.socket = socket;
 	}
 	
-	public JsonObject primi() throws Exception {
+	public Object primi() throws Exception {
 		ObjectInputStream in;
 		try {
 			in = new ObjectInputStream(socket.getInputStream());
-			return (JsonObject) in.readObject();
+			return in.readObject();
 		} catch (IOException ex) {
 			socket.close();
 			throw ex;
