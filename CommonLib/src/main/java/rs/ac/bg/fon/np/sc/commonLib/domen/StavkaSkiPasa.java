@@ -1,4 +1,4 @@
-package rs.ac.bg.fon.np.sc.commonLib;
+package rs.ac.bg.fon.np.sc.commonLib.domen;
 
 import java.io.Serializable;
 import java.math.BigDecimal;

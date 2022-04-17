@@ -1,4 +1,4 @@
-package rs.ac.bg.fon.np.sc.commonLib;
+package rs.ac.bg.fon.np.sc.commonLib.domen;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
