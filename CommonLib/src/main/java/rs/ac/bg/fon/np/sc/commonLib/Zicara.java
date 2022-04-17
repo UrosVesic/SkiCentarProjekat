@@ -1,9 +1,10 @@
 package rs.ac.bg.fon.np.sc.commonLib;
 
+import java.io.Serializable;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class Zicara implements OpstiDomenskiObjekat {
+public class Zicara implements OpstiDomenskiObjekat,Serializable {
 
 	private long SifraZicare;
 	private String nazivZicare;

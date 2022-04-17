@@ -1,9 +1,10 @@
 package rs.ac.bg.fon.np.sc.commonLib;
 
+import java.io.Serializable;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class Staza implements OpstiDomenskiObjekat {
+public class Staza implements OpstiDomenskiObjekat,Serializable {
 
 	private long brojStaze;
 	private String nazivStaze;

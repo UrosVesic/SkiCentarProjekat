@@ -1,10 +1,11 @@
 package rs.ac.bg.fon.np.sc.commonLib;
 
+import java.io.Serializable;
 import java.math.BigDecimal;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class SkiKarta implements OpstiDomenskiObjekat {
+public class SkiKarta implements OpstiDomenskiObjekat,Serializable {
 
 	private long sifraSkiKarte;
 	private String vrstaSkiKarte;
