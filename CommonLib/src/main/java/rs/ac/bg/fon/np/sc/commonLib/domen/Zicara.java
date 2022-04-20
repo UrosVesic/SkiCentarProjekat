@@ -160,4 +160,9 @@ public class Zicara implements OpstiDomenskiObjekat,Serializable {
 		}
 	}
 
+    @Override
+    public void postaviVrednostPK(long id) {
+        this.SifraZicare = id;
+    }
+
 }

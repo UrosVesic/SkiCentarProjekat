@@ -49,4 +49,6 @@ public interface OpstiDomenskiObjekat {
 
 	}
 
+    public void postaviVrednostPK(long id);
+
 }

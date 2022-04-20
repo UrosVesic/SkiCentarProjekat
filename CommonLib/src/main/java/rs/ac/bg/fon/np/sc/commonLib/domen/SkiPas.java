@@ -209,4 +209,9 @@ public class SkiPas implements OpstiDomenskiObjekat,Serializable {
 		}
 		return true;
 	}
+
+    @Override
+    public void postaviVrednostPK(long id) {
+        this.sifraSkiPasa = id;
+    }
 }

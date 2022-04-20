@@ -149,4 +149,9 @@ public class SkiCentar implements OpstiDomenskiObjekat {
 		return true;
 	}
 
+    @Override
+    public void postaviVrednostPK(long id) {
+        this.sifraSkiCentra = id;
+    }
+
 }

@@ -159,4 +159,9 @@ public class SkiKarta implements OpstiDomenskiObjekat,Serializable {
 		}
 		return true;
 	}
+
+    @Override
+    public void postaviVrednostPK(long id) {
+        this.sifraSkiKarte = id;
+    }
 }

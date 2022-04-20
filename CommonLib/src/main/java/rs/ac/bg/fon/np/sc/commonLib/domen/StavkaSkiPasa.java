@@ -234,4 +234,9 @@ public class StavkaSkiPasa implements OpstiDomenskiObjekat,Serializable {
 
 	    }
 
+    @Override
+    public void postaviVrednostPK(long id) {
+        this.redniBroj = id;
+    }
+
 }

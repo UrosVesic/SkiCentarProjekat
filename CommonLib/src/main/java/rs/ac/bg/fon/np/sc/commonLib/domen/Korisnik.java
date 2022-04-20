@@ -6,7 +6,8 @@ import java.sql.SQLException;
 import java.util.Objects;
 
 public class Korisnik implements OpstiDomenskiObjekat,Serializable {
-
+        
+        private long id;
 	private String ime;
 	private String prezime;
 	private String email;
@@ -147,4 +148,11 @@ public class Korisnik implements OpstiDomenskiObjekat,Serializable {
 		// TODO Auto-generated method stub
 		throw new UnsupportedOperationException("Not supported yet.");
 	}
+
+    @Override
+    public void postaviVrednostPK(long id) {
+        this.id = id;
+    }
+
+    
 }
