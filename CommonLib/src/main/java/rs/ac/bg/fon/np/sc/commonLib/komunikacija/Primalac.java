@@ -1,4 +1,4 @@
-package rs.ac.bg.fon.np.sc.komunikacija;
+package rs.ac.bg.fon.np.sc.commonlib.komunikacija;
 
 import java.io.IOException;
 import java.io.ObjectInputStream;
