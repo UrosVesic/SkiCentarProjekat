@@ -17,9 +17,6 @@ public interface OpstiDomenskiObjekat {
 
 	String vratiNazivPK();
 
-	void povecajBroj(ResultSet rs) throws SQLException;
-
-	void postaviPocetniBroj();
 
 	public OpstiDomenskiObjekat kreirajInstancu();
 
