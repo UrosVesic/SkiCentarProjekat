@@ -141,7 +141,7 @@ public class Korisnik implements OpstiDomenskiObjekat, Serializable {
     @Override
     public int vratiBrojVezanihObjekata() {
         // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Not supported yet.");
+        return 0;
     }
 
     @Override
