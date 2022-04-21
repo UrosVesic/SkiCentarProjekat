@@ -4,11 +4,12 @@ import java.io.Serializable;
 import java.math.BigDecimal;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import rs.ac.bg.fon.np.sc.commonLib.domen.VrstaSkiKarte;
 
 public class SkiKarta implements OpstiDomenskiObjekat, Serializable {
 
     private long sifraSkiKarte;
-    private String vrstaSkiKarte;
+    private VrstaSkiKarte vrstaSkiKarte;
     private BigDecimal cenaSkiKarte;
     private SkiCentar skiCentar;
 
@@ -16,7 +17,7 @@ public class SkiKarta implements OpstiDomenskiObjekat, Serializable {
         cenaSkiKarte = new BigDecimal(0);
     }
 
-    public SkiKarta(long sifraSkiKarte, String vrstaSkiKarte, BigDecimal cenaSkiKarte, SkiCentar skiCentar) {
+    public SkiKarta(long sifraSkiKarte, VrstaSkiKarte vrstaSkiKarte, BigDecimal cenaSkiKarte, SkiCentar skiCentar) {
         this.sifraSkiKarte = sifraSkiKarte;
         this.vrstaSkiKarte = vrstaSkiKarte;
         this.cenaSkiKarte = cenaSkiKarte;
@@ -31,11 +32,11 @@ public class SkiKarta implements OpstiDomenskiObjekat, Serializable {
         this.sifraSkiKarte = sifraSkiKarte;
     }
 
-    public String getVrstaSkiKarte() {
+    public VrstaSkiKarte getVrstaSkiKarte() {
         return vrstaSkiKarte;
     }
 
-    public void setVrstaSkiKarte(String vrstaSkiKarte) {
+    public void setVrstaSkiKarte(VrstaSkiKarte vrstaSkiKarte) {
         this.vrstaSkiKarte = vrstaSkiKarte;
     }
 
@@ -86,7 +87,7 @@ public class SkiKarta implements OpstiDomenskiObjekat, Serializable {
     @Override
     public void napuni(ResultSet rs) throws SQLException {
         sifraSkiKarte = rs.getLong("sifraSkiKarte");
-        vrstaSkiKarte = rs.getString("vrstaSkiKarte");
+        vrstaSkiKarte = VrstaSkiKarte.valueOf(rs.getString("vrstaSkiKarte"));
         cenaSkiKarte = rs.getBigDecimal("cenaSkiKarte");
         skiCentar = new SkiCentar();
         skiCentar.setSifraSkiCentra(rs.getLong("sifraSkiCentra"));
@@ -96,7 +97,6 @@ public class SkiKarta implements OpstiDomenskiObjekat, Serializable {
     public String vratiNazivPK() {
         return "sifraSkiKarte";
     }
-
 
     @Override
     public OpstiDomenskiObjekat kreirajInstancu() {
