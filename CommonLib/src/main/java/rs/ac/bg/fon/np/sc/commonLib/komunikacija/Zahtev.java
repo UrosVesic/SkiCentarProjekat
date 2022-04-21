@@ -1,32 +1,35 @@
 package rs.ac.bg.fon.np.sc.commonlib.komunikacija;
 
-import com.google.gson.JsonObject;
+import java.io.Serializable;
 
-public class Zahtev {
-	private int operacija;
-	private JsonObject parametar;
+public class Zahtev implements Serializable{
 
-	public Zahtev() {
-	}
+    private int operacija;
+    private String parametar;
 
-	public Zahtev(int operacija, JsonObject parametar) {
-		this.operacija = operacija;
-		this.parametar = parametar;
-	}
+    public Zahtev() {
+    }
 
-	public int getOperacija() {
-		return operacija;
-	}
+    public Zahtev(int operacija, String parametar) {
+        this.operacija = operacija;
+        this.parametar = parametar;
+    }
 
-	public void setOperacija(int operacija) {
-		this.operacija = operacija;
-	}
+    public int getOperacija() {
+        return operacija;
+    }
 
-	public JsonObject getParametar() {
-		return parametar;
-	}
+    public void setOperacija(int operacija) {
+        this.operacija = operacija;
+    }
 
-	public void setParametar(JsonObject parametar) {
-		this.parametar = parametar;
-	}
+    public String getParametar() {
+        return parametar;
+    }
+
+    public void setParametar(String parametar) {
+        this.parametar = parametar;
+    }
+
+    
 }
