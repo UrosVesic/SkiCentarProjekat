@@ -40,10 +40,6 @@ public class Staza implements OpstiDomenskiObjekat, Serializable {
         this.brojStaze = brojStaze;
     }
 
-    
-
-    
-
     public String getNazivStaze() {
         return nazivStaze;
     }
@@ -70,14 +66,15 @@ public class Staza implements OpstiDomenskiObjekat, Serializable {
 
     @Override
     public String vratiVrednostiAtributa() {
-        return brojStaze + ", " + (nazivStaze == null ? null : "'" + nazivStaze + "'") + ", "
+        return (brojStaze == null ? null : "'" + brojStaze + "'") + ", " + (nazivStaze == null ? null : "'" + nazivStaze + "'") + ", "
                 + (tipStaze == null ? null : "'" + tipStaze + "'") + ", "
                 + (skiCentar == null ? null : skiCentar.getSifraSkiCentra());
     }
 
     @Override
     public String postaviVrednostiAtributa() {
-        return "brojStaze = " + brojStaze + ", " + "nazivStaze = "
+        return "brojStaze = "
+                + (brojStaze == null ? null : "'" + brojStaze + "'") + ", " + "nazivStaze = "
                 + (nazivStaze == null ? null : "'" + nazivStaze + "'") + ", " + "tipStaze = "
                 + (tipStaze == null ? null : "'" + tipStaze + "'") + ", " + "sifraSkiCentra = "
                 + (skiCentar == null ? null : skiCentar.getSifraSkiCentra());
@@ -119,7 +116,6 @@ public class Staza implements OpstiDomenskiObjekat, Serializable {
         return "brojStaze";
     }
 
-    
     @Override
     public OpstiDomenskiObjekat kreirajInstancu() {
         return new Staza();
@@ -157,7 +153,7 @@ public class Staza implements OpstiDomenskiObjekat, Serializable {
             return false;
         }
         final Staza other = (Staza) obj;
-        if (this.brojStaze != other.brojStaze) {
+        if (this.idStaze != other.idStaze) {
             return false;
         }
         return true;
