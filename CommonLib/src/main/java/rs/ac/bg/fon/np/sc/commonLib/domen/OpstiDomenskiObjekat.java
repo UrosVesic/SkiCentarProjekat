@@ -5,46 +5,47 @@ import java.sql.SQLException;
 
 public interface OpstiDomenskiObjekat {
 
-	String vratiVrednostiAtributa();
+    String vratiImenaAtrubita();
 
-	String postaviVrednostiAtributa();
+    String vratiVrednostiAtributa();
 
-	String vratiImeKlase();
+    String postaviVrednostiAtributa();
 
-	String vratiUslovZaNadjiSlog();
+    String vratiImeKlase();
 
-	void napuni(ResultSet rs) throws SQLException;
+    String vratiUslovZaNadjiSlog();
 
-	String vratiNazivPK();
+    void napuni(ResultSet rs) throws SQLException;
 
+    String vratiNazivPK();
 
-	public OpstiDomenskiObjekat kreirajInstancu();
+    public OpstiDomenskiObjekat kreirajInstancu();
 
-	public int vratiBrojVezanihObjekata();
+    public int vratiBrojVezanihObjekata();
 
-	public OpstiDomenskiObjekat vratiVezaniObjekat(int i);
+    public OpstiDomenskiObjekat vratiVezaniObjekat(int i);
 
-	public void postaviVrednostVezanogObjekta(OpstiDomenskiObjekat vezo, int i);
+    public void postaviVrednostVezanogObjekta(OpstiDomenskiObjekat vezo, int i);
 
-	default String vratiUslovZaPromeniSlog() {
-		return vratiUslovZaNadjiSlog();
-	}
+    default String vratiUslovZaPromeniSlog() {
+        return vratiUslovZaNadjiSlog();
+    }
 
-	default int vratiBrojSlogovaVezanogObjekta(int i) {
-		return 1;
-	}
+    default int vratiBrojSlogovaVezanogObjekta(int i) {
+        return 1;
+    }
 
-	default OpstiDomenskiObjekat vratiSlogVezanogObjekta(int i, int j) {
-		return null;
-	}
+    default OpstiDomenskiObjekat vratiSlogVezanogObjekta(int i, int j) {
+        return null;
+    }
 
-	public default String vratiUslovZaNadjiSlogove() {
-		return vratiUslovZaNadjiSlog();
-	}
+    public default String vratiUslovZaNadjiSlogove() {
+        return vratiUslovZaNadjiSlog();
+    }
 
-	public default void kreirajVezaniObjekat(int brojStavki, int i) {
+    public default void kreirajVezaniObjekat(int brojStavki, int i) {
 
-	}
+    }
 
     public void postaviVrednostPK(long id);
 

@@ -5,12 +5,27 @@
  */
 package rs.ac.bg.fon.np.sc.commonLib.domen;
 
+import com.google.gson.annotations.SerializedName;
+
 /**
  *
  * @author UrosVesic
  */
 public enum VrstaSkiKarte {
-    JEDNODNEVNA(1), DVODNEVNA(2), TRODNEVNA(3), CETVORODNEVNA(4), PETODNEVNA(5), SESTODNEVNA(6), SEDMODNEVNA(7);
+    @SerializedName("Jednodnevna")
+    JEDNODNEVNA(1),
+    @SerializedName("Dvodnevna")
+    DVODNEVNA(2),
+    @SerializedName("Trodnevna")
+    TRODNEVNA(3),
+    @SerializedName("Cetvorodnevna")
+    CETVORODNEVNA(4),
+    @SerializedName("Petodnevna")
+    PETODNEVNA(5),
+    @SerializedName("Sestodnevna")
+    SESTODNEVNA(6),
+    @SerializedName("Sedmodnevna")
+    SEDMODNEVNA(7);
     private final int brojDana;
 
     private VrstaSkiKarte(int dani) {

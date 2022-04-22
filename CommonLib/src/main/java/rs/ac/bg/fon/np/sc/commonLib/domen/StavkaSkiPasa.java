@@ -209,4 +209,9 @@ public class StavkaSkiPasa implements OpstiDomenskiObjekat, Serializable {
         this.redniBroj = id;
     }
 
+    @Override
+    public String vratiImenaAtrubita() {
+       return "sifraSkiPasa, vrednostStavke, pocetakVazenja, zavrsetakVazenja, sifraSkiKarte";
+    }
+
 }

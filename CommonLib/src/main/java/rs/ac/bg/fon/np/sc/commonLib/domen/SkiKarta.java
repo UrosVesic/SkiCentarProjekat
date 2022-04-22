@@ -1,5 +1,6 @@
 package rs.ac.bg.fon.np.sc.commonlib.domen;
 
+import com.google.gson.annotations.SerializedName;
 import java.io.Serializable;
 import java.math.BigDecimal;
 import java.sql.ResultSet;
@@ -9,6 +10,7 @@ import rs.ac.bg.fon.np.sc.commonLib.domen.VrstaSkiKarte;
 public class SkiKarta implements OpstiDomenskiObjekat, Serializable {
 
     private long sifraSkiKarte;
+    @SerializedName("vrstaSkiKarte")
     private VrstaSkiKarte vrstaSkiKarte;
     private BigDecimal cenaSkiKarte;
     private SkiCentar skiCentar;
@@ -154,5 +156,10 @@ public class SkiKarta implements OpstiDomenskiObjekat, Serializable {
     @Override
     public void postaviVrednostPK(long id) {
         this.sifraSkiKarte = id;
+    }
+
+    @Override
+    public String vratiImenaAtrubita() {
+        return "vrstaSkiKarte, cenaSkiKarte, sifraSkiCentra";
     }
 }

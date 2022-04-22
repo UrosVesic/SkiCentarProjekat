@@ -155,4 +155,9 @@ public class Zicara implements OpstiDomenskiObjekat, Serializable {
         this.SifraZicare = id;
     }
 
+    @Override
+    public String vratiImenaAtrubita() {
+        return "nazivZicare, radnoVreme, kapacitet, UFunkciji, sifraSkiCentra";
+    }
+
 }

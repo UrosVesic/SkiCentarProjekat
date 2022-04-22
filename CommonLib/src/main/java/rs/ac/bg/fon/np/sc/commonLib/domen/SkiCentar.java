@@ -66,7 +66,7 @@ public class SkiCentar implements OpstiDomenskiObjekat {
 
     @Override
     public String postaviVrednostiAtributa() {
-        return "nazivSkiCentra = " 
+        return "nazivSkiCentra = "
                 + (nazivSkiCentra == null ? null : "'" + nazivSkiCentra + "'") + ", " + "nazivPlanine = "
                 + (nazivPlanine == null ? null : "'" + nazivPlanine + "'") + ", " + "radnoVreme = "
                 + (radnoVreme == null ? null : "'" + radnoVreme + "'");
@@ -100,7 +100,6 @@ public class SkiCentar implements OpstiDomenskiObjekat {
     public String vratiNazivPK() {
         return "sifraSkiCentra";
     }
-
 
     @Override
     public OpstiDomenskiObjekat kreirajInstancu() {
@@ -143,6 +142,11 @@ public class SkiCentar implements OpstiDomenskiObjekat {
     @Override
     public void postaviVrednostPK(long id) {
         this.sifraSkiCentra = id;
+    }
+
+    @Override
+    public String vratiImenaAtrubita() {
+        return "nazivSkiCentra, nazivPlanine, nradnoVreme";
     }
 
 }

@@ -168,4 +168,9 @@ public class Staza implements OpstiDomenskiObjekat, Serializable {
         this.idStaze = id;
     }
 
+    @Override
+    public String vratiImenaAtrubita() {
+        return "brojStaze, nazivStaze, tipStaze, sifraSkiCentra";
+    }
+
 }

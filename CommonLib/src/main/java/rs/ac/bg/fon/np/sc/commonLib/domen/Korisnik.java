@@ -38,8 +38,6 @@ public class Korisnik implements OpstiDomenskiObjekat, Serializable {
     public void setId(long id) {
         this.id = id;
     }
-    
-    
 
     public String getSifra() {
         return sifra;
@@ -114,7 +112,7 @@ public class Korisnik implements OpstiDomenskiObjekat, Serializable {
 
     @Override
     public String vratiUslovZaNadjiSlog() {
-        return "email LIKE'" + email + "' AND sifra LIKE '"+sifra+"'";
+        return "email LIKE'" + email + "' AND sifra LIKE '" + sifra + "'";
     }
 
     @Override
@@ -129,8 +127,6 @@ public class Korisnik implements OpstiDomenskiObjekat, Serializable {
     public String vratiNazivPK() {
         throw new UnsupportedOperationException("Not supported yet.");
     }
-
-    
 
     @Override
     public OpstiDomenskiObjekat kreirajInstancu() {
@@ -159,6 +155,11 @@ public class Korisnik implements OpstiDomenskiObjekat, Serializable {
     @Override
     public void postaviVrednostPK(long id) {
         this.id = id;
+    }
+
+    @Override
+    public String vratiImenaAtrubita() {
+        return "ime, prezime, email, sifra";
     }
 
 }

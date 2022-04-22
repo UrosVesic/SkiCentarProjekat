@@ -120,8 +120,6 @@ public class SkiPas implements OpstiDomenskiObjekat, Serializable {
         return "sifraSkiPasa";
     }
 
-   
-
     @Override
     public OpstiDomenskiObjekat kreirajInstancu() {
         return new SkiPas();
@@ -205,5 +203,10 @@ public class SkiPas implements OpstiDomenskiObjekat, Serializable {
     @Override
     public void postaviVrednostPK(long id) {
         this.sifraSkiPasa = id;
+    }
+
+    @Override
+    public String vratiImenaAtrubita() {
+        return "ukupnaCena, imePrezimeKupca, datumIzdavanja";
     }
 }
