@@ -5,7 +5,6 @@ import java.io.Serializable;
 import java.math.BigDecimal;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import rs.ac.bg.fon.np.sc.commonLib.domen.VrstaSkiKarte;
 
 public class SkiKarta implements OpstiDomenskiObjekat, Serializable {
 
