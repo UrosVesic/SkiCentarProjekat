@@ -9,4 +9,7 @@ public class Operacije implements Serializable {
     public static final int ZAPAMTI_SKI_CENTAR = 3;
     public static final int PRETRAZI_SKI_KARTE = 4;
     public static final int ZAPAMTI_STAZU = 5;
+    public static final int PRETRAZI_STAZE = 6;
+    public static final int UCITAJ_STAZU = 7;
+    public static final int PROMENI_STAZU = 8;
 }
