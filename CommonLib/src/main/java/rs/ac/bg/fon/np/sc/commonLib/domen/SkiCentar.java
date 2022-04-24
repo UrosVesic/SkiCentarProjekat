@@ -79,7 +79,7 @@ public class SkiCentar implements OpstiDomenskiObjekat {
 
     @Override
     public String vratiUslovZaNadjiSlog() {
-        return "sifraSkiCentra = " + sifraSkiCentra;
+        return "nazivSkiCentra LIKE '%" + nazivSkiCentra + "%'";
     }
 
     @Override
@@ -146,7 +146,12 @@ public class SkiCentar implements OpstiDomenskiObjekat {
 
     @Override
     public String vratiImenaAtrubita() {
-        return "nazivSkiCentra, nazivPlanine, nradnoVreme";
+        return "nazivSkiCentra, nazivPlanine, radnoVreme";
+    }
+
+    @Override
+    public String vratiUslovZaPromeniSlog() {
+        return "sifraSkiCentra = " + sifraSkiCentra;
     }
 
 }
