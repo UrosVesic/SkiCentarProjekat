@@ -12,4 +12,5 @@ public class Operacije implements Serializable {
     public static final int PRETRAZI_STAZE = 6;
     public static final int UCITAJ_STAZU = 7;
     public static final int PROMENI_STAZU = 8;
+    public static final int ZAPAMTI_ZICARU = 9;
 }
