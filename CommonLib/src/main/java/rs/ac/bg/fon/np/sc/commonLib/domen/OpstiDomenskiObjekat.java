@@ -35,16 +35,16 @@ public interface OpstiDomenskiObjekat {
         return 1;
     }
 
-    default OpstiDomenskiObjekat vratiSlogVezanogObjekta(int i, int j) {
-        return null;
-    }
-
     public default String vratiUslovZaNadjiSlogove() {
         return vratiUslovZaNadjiSlog();
     }
 
     public default void kreirajVezaniObjekat(int brojStavki, int i) {
 
+    }
+    
+    public default String vratiUslovZaNadjiSlog2(){
+        return vratiUslovZaNadjiSlog();
     }
 
     public void postaviVrednostPK(long id);
