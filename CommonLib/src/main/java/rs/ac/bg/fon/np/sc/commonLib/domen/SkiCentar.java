@@ -79,8 +79,16 @@ public class SkiCentar implements OpstiDomenskiObjekat {
 
     @Override
     public String vratiUslovZaNadjiSlog() {
+        
+        return "sifraSkiCentra= " + sifraSkiCentra ;
+    }
+
+    @Override
+    public String vratiUslovZaNadjiSlog2() {
         return "nazivSkiCentra LIKE '%" + nazivSkiCentra + "%'";
     }
+    
+    
 
     @Override
     public void napuni(ResultSet rs) throws SQLException {
