@@ -1,5 +1,6 @@
 package rs.ac.bg.fon.np.sc.commonlib.domen;
 
+
 import java.io.Serializable;
 import java.math.BigDecimal;
 import java.sql.ResultSet;
@@ -11,10 +12,14 @@ import java.util.List;
 
 public class SkiPas implements OpstiDomenskiObjekat, Serializable {
 
+   
     private long sifraSkiPasa;
+
     private BigDecimal ukupnaCena;
+
     private String imePrezimeKupca;
     private Date datumIzdavanja;
+
     private List<StavkaSkiPasa> stavkeSkiPasa;
 
     public SkiPas() {
@@ -71,15 +76,17 @@ public class SkiPas implements OpstiDomenskiObjekat, Serializable {
     }
 
     public void setDatumIzdavanja(Date datumIzdavanja) {
-        SimpleDateFormat sm = new SimpleDateFormat("yyyy-MM-dd");
+        /*SimpleDateFormat sm = new SimpleDateFormat("yyyy-MM-dd");
         Date dDatum = datumIzdavanja;
-        datumIzdavanja = java.sql.Date.valueOf(sm.format(dDatum));
+        datumIzdavanja = java.sql.Date.valueOf(sm.format(dDatum));*/
         this.datumIzdavanja = datumIzdavanja;
     }
 
     @Override
     public String vratiVrednostiAtributa() {
-
+        SimpleDateFormat sm = new SimpleDateFormat("yyyy-MM-dd");
+        Date dDatum = datumIzdavanja;
+        datumIzdavanja = java.sql.Date.valueOf(sm.format(dDatum));
         return ukupnaCena + ", " + (imePrezimeKupca == null ? null : "'" + imePrezimeKupca + "'")
                 + ", " + "'" + datumIzdavanja + "'";
     }
@@ -153,14 +160,6 @@ public class SkiPas implements OpstiDomenskiObjekat, Serializable {
             return stavkeSkiPasa.size();
         }
         return 0;
-    }
-
-    @Override
-    public OpstiDomenskiObjekat vratiSlogVezanogObjekta(int i, int j) {
-        if (i == 0) {
-            return stavkeSkiPasa.get(j);
-        }
-        return null;
     }
 
     @Override
