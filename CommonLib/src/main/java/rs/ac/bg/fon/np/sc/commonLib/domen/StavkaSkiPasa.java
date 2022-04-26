@@ -211,7 +211,7 @@ public class StavkaSkiPasa implements OpstiDomenskiObjekat, Serializable {
 
     @Override
     public String vratiImenaAtrubita() {
-       return "sifraSkiPasa, vrednostStavke, pocetakVazenja, zavrsetakVazenja, sifraSkiKarte";
+        return "sifraSkiPasa, vrednostStavke, pocetakVazenja, zavrsetakVazenja, sifraSkiKarte";
     }
 
 }
