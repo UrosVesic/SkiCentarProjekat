@@ -1,6 +1,5 @@
 package rs.ac.bg.fon.np.sc.commonlib.domen;
 
-
 import java.io.Serializable;
 import java.math.BigDecimal;
 import java.sql.ResultSet;
@@ -12,14 +11,11 @@ import java.util.List;
 
 public class SkiPas implements OpstiDomenskiObjekat, Serializable {
 
-   
     private long sifraSkiPasa;
-
     private BigDecimal ukupnaCena;
-
     private String imePrezimeKupca;
     private Date datumIzdavanja;
-
+    private String sezona;
     private List<StavkaSkiPasa> stavkeSkiPasa;
 
     public SkiPas() {
@@ -30,12 +26,12 @@ public class SkiPas implements OpstiDomenskiObjekat, Serializable {
         stavkeSkiPasa = new ArrayList<>();
     }
 
-    public SkiPas(long sifraSkiPasa, BigDecimal ukupnaCena, String imePrezimeKupca, Date datumIzdavanja,
-            List<StavkaSkiPasa> stavkeSkiPasa) {
+    public SkiPas(long sifraSkiPasa, BigDecimal ukupnaCena, String imePrezimeKupca, Date datumIzdavanja, String sezona, List<StavkaSkiPasa> stavkeSkiPasa) {
         this.sifraSkiPasa = sifraSkiPasa;
         this.ukupnaCena = ukupnaCena;
         this.imePrezimeKupca = imePrezimeKupca;
         this.datumIzdavanja = datumIzdavanja;
+        this.sezona = sezona;
         this.stavkeSkiPasa = stavkeSkiPasa;
     }
 
@@ -88,14 +84,15 @@ public class SkiPas implements OpstiDomenskiObjekat, Serializable {
         Date dDatum = datumIzdavanja;
         datumIzdavanja = java.sql.Date.valueOf(sm.format(dDatum));
         return ukupnaCena + ", " + (imePrezimeKupca == null ? null : "'" + imePrezimeKupca + "'")
-                + ", " + "'" + datumIzdavanja + "'";
+                + ", " + "'" + datumIzdavanja + "'" + ", " + (sezona == null ? null : "'" + sezona + "'");
     }
 
     @Override
     public String postaviVrednostiAtributa() {
         return "ukupnaCena = " + ukupnaCena + ", " + "imePrezimeKupca = "
                 + (imePrezimeKupca == null ? null : "'" + imePrezimeKupca + "'") + ", " + "datumIzdavanja = '"
-                + datumIzdavanja + "'";
+                + datumIzdavanja + "'" + "sezona = "
+                + (sezona == null ? null : "'" + sezona + "'");
     }
 
     @Override
@@ -206,6 +203,14 @@ public class SkiPas implements OpstiDomenskiObjekat, Serializable {
 
     @Override
     public String vratiImenaAtrubita() {
-        return "ukupnaCena, imePrezimeKupca, datumIzdavanja";
+        return "ukupnaCena, imePrezimeKupca, datumIzdavanja, sezona";
+    }
+
+    public String getSezona() {
+        return sezona;
+    }
+
+    public void setSezona(String sezona) {
+        this.sezona = sezona;
     }
 }
