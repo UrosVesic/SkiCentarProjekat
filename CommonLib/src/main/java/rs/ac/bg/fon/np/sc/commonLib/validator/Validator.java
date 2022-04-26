@@ -9,6 +9,7 @@ import java.math.BigDecimal;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
 import java.util.stream.Collectors;
 import rs.ac.bg.fon.np.sc.commonlib.domen.SkiPas;
@@ -156,12 +157,18 @@ public class Validator {
         return this;
     }
 
-    public Validator validirajDaLiJeDatumStavkePosleIzdavanja(StavkaSkiPasa stavka, SkiPas skiPas, String poruka) {
-        if (stavka.getPocetakVazenja().before(skiPas.getDatumIzdavanja())) {
+    public Validator validirajDaLiJeDatumStavkeUSezoni(StavkaSkiPasa stavka, SkiPas skiPas, String poruka) {
+        Calendar calendar = Calendar.getInstance();
+        calendar.setTime(stavka.getPocetakVazenja());
+        int godina = calendar.get(Calendar.YEAR);
+        int mesec = calendar.get(Calendar.MONTH);
+        String[] godineSezone = skiPas.getSezona().split("/");
+        if((godineSezone[0].equals(godina+"") && mesec > 5) || (godineSezone[1].equals(godina+"")&& mesec <= 5)){
+            return this;
+        }else{
             this.validationErros.add(poruka);
             return this;
         }
-        return this;
     }
 
 }
