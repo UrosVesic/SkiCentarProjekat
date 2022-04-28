@@ -107,7 +107,7 @@ public class SkiPas implements OpstiDomenskiObjekat, Serializable {
 
     @Override
     public String vratiUslovZaNadjiSlogove() {
-        return "imePrezimeKupca LIKE '" + imePrezimeKupca + "'";
+        return "imePrezimeKupca LIKE '%" + imePrezimeKupca + "%'";
     }
 
     @Override
@@ -116,6 +116,7 @@ public class SkiPas implements OpstiDomenskiObjekat, Serializable {
         ukupnaCena = rs.getBigDecimal("ukupnaCena");
         imePrezimeKupca = rs.getString("imePrezimeKupca");
         datumIzdavanja = new Date(rs.getDate("datumIzdavanja").getTime());
+        sezona = rs.getString("sezona");
         stavkeSkiPasa = new ArrayList<>();
     }
 
