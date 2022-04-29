@@ -1,5 +1,6 @@
 package rs.ac.bg.fon.np.sc.commonlib.domen;
 
+import com.google.gson.annotations.Expose;
 import java.io.Serializable;
 import java.math.BigDecimal;
 import java.sql.ResultSet;
@@ -11,10 +12,15 @@ import java.util.Objects;
 public class StavkaSkiPasa implements OpstiDomenskiObjekat, Serializable {
 
     private SkiPas skiPas;
+    @Expose
     private long redniBroj;
+    @Expose
     private BigDecimal vrednostStavke;
+    @Expose
     private Date pocetakVazenja;
+    @Expose
     private Date zavrsetakVazenja;
+    @Expose
     private SkiKarta skiKarta;
 
     public StavkaSkiPasa() {

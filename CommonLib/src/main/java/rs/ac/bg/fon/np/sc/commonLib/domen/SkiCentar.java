@@ -1,13 +1,18 @@
 package rs.ac.bg.fon.np.sc.commonlib.domen;
 
+import com.google.gson.annotations.Expose;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class SkiCentar implements OpstiDomenskiObjekat {
 
+    @Expose
     private long sifraSkiCentra;
+    @Expose
     private String nazivSkiCentra;
+    @Expose
     private String nazivPlanine;
+    @Expose
     private String radnoVreme;
 
     public SkiCentar() {
@@ -79,16 +84,14 @@ public class SkiCentar implements OpstiDomenskiObjekat {
 
     @Override
     public String vratiUslovZaNadjiSlog() {
-        
-        return "sifraSkiCentra= " + sifraSkiCentra ;
+
+        return "sifraSkiCentra= " + sifraSkiCentra;
     }
 
     @Override
     public String vratiUslovZaNadjiSlog2() {
         return "nazivSkiCentra LIKE '%" + nazivSkiCentra + "%'";
     }
-    
-    
 
     @Override
     public void napuni(ResultSet rs) throws SQLException {

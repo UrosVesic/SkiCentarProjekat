@@ -1,5 +1,6 @@
 package rs.ac.bg.fon.np.sc.commonlib.domen;
 
+import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 import java.io.Serializable;
 import java.math.BigDecimal;
@@ -8,10 +9,14 @@ import java.sql.SQLException;
 
 public class SkiKarta implements OpstiDomenskiObjekat, Serializable {
 
+    @Expose
     private long sifraSkiKarte;
     @SerializedName("vrstaSkiKarte")
+    @Expose
     private VrstaSkiKarte vrstaSkiKarte;
+    @Expose
     private BigDecimal cenaSkiKarte;
+    @Expose
     private SkiCentar skiCentar;
 
     public SkiKarta() {
