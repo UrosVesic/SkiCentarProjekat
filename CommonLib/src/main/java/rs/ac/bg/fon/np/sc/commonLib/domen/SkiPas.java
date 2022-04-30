@@ -88,17 +88,18 @@ public class SkiPas implements OpstiDomenskiObjekat, Serializable {
     @Override
     public String vratiVrednostiAtributa() {
         SimpleDateFormat sm = new SimpleDateFormat("yyyy-MM-dd");
-        Date dDatum = datumIzdavanja;
-        datumIzdavanja = java.sql.Date.valueOf(sm.format(dDatum));
+        datumIzdavanja = java.sql.Date.valueOf(sm.format(datumIzdavanja));
         return ukupnaCena + ", " + (imePrezimeKupca == null ? null : "'" + imePrezimeKupca + "'")
                 + ", " + "'" + datumIzdavanja + "'" + ", " + (sezona == null ? null : "'" + sezona + "'");
     }
 
     @Override
     public String postaviVrednostiAtributa() {
+        SimpleDateFormat sm = new SimpleDateFormat("yyyy-MM-dd");
+        datumIzdavanja = java.sql.Date.valueOf(sm.format(datumIzdavanja));
         return "ukupnaCena = " + ukupnaCena + ", " + "imePrezimeKupca = "
                 + (imePrezimeKupca == null ? null : "'" + imePrezimeKupca + "'") + ", " + "datumIzdavanja = '"
-                + datumIzdavanja + "'" + "sezona = "
+                + datumIzdavanja + "'" + ", sezona = "
                 + (sezona == null ? null : "'" + sezona + "'");
     }
 
