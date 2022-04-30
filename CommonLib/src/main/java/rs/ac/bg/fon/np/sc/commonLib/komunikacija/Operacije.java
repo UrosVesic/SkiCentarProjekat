@@ -20,4 +20,5 @@ public class Operacije implements Serializable {
     public static final int ZAPAMTI_SKI_PAS = 14;
     public static final int PRETRAZI_SKI_PASOVE = 15;
     public static final int UCITAJ_SKI_PAS = 16;
+    public static final int PROMENI_SKI_PAS = 17;
 }
