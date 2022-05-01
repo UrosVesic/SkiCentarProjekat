@@ -133,25 +133,28 @@ public class Validator {
 
     public Validator validirajDaLiPostojeStavkeZaPeriod(StavkaSkiPasa stavka, SkiPas skiPas, String poruka) {
         for (StavkaSkiPasa stavkaPostojeca : skiPas.getStavkeSkiPasa()) {
-            if (stavka.getZavrsetakVazenja() != null && stavka.getZavrsetakVazenja().after(stavkaPostojeca.getPocetakVazenja()) && stavka.getZavrsetakVazenja().before(stavkaPostojeca.getZavrsetakVazenja())) {
-                this.validationErros.add(poruka);
-                return this;
-            }
-            if (stavka.getPocetakVazenja() != null && stavka.getPocetakVazenja().after(stavkaPostojeca.getPocetakVazenja()) && stavka.getPocetakVazenja().before(stavkaPostojeca.getZavrsetakVazenja())) {
-                this.validationErros.add(poruka);
-                return this;
-            }
-            if (stavka.getPocetakVazenja() != null && stavka.getPocetakVazenja().compareTo(stavkaPostojeca.getPocetakVazenja()) == 0) {
-                this.validationErros.add(poruka);
-                return this;
-            }
-            if (stavka.getZavrsetakVazenja() != null && stavka.getZavrsetakVazenja().compareTo(stavkaPostojeca.getZavrsetakVazenja()) == 0) {
-                this.validationErros.add(poruka);
-                return this;
-            }
-            if (stavka.getPocetakVazenja().compareTo(stavkaPostojeca.getZavrsetakVazenja()) == 0) {
-                this.validationErros.add(poruka);
-                return this;
+
+            if (stavka != stavkaPostojeca) {
+                if (stavka.getZavrsetakVazenja() != null && stavka.getZavrsetakVazenja().after(stavkaPostojeca.getPocetakVazenja()) && stavka.getZavrsetakVazenja().before(stavkaPostojeca.getZavrsetakVazenja())) {
+                    this.validationErros.add(poruka);
+                    return this;
+                }
+                if (stavka.getPocetakVazenja() != null && stavka.getPocetakVazenja().after(stavkaPostojeca.getPocetakVazenja()) && stavka.getPocetakVazenja().before(stavkaPostojeca.getZavrsetakVazenja())) {
+                    this.validationErros.add(poruka);
+                    return this;
+                }
+                if (stavka.getPocetakVazenja() != null && stavka.getPocetakVazenja().compareTo(stavkaPostojeca.getPocetakVazenja()) == 0) {
+                    this.validationErros.add(poruka);
+                    return this;
+                }
+                if (stavka.getZavrsetakVazenja() != null && stavka.getZavrsetakVazenja().compareTo(stavkaPostojeca.getZavrsetakVazenja()) == 0) {
+                    this.validationErros.add(poruka);
+                    return this;
+                }
+//                if (stavka.getPocetakVazenja().compareTo(stavkaPostojeca.getZavrsetakVazenja()) == 0) {
+//                    this.validationErros.add(poruka);
+//                    return this;
+//                }
             }
         }
         return this;
@@ -163,9 +166,9 @@ public class Validator {
         int godina = calendar.get(Calendar.YEAR);
         int mesec = calendar.get(Calendar.MONTH);
         String[] godineSezone = skiPas.getSezona().split("/");
-        if((godineSezone[0].equals(godina+"") && mesec > 5) || (godineSezone[1].equals(godina+"")&& mesec <= 5)){
+        if ((godineSezone[0].equals(godina + "") && mesec > 5) || (godineSezone[1].equals(godina + "") && mesec <= 5)) {
             return this;
-        }else{
+        } else {
             this.validationErros.add(poruka);
             return this;
         }
