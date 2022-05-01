@@ -9,6 +9,7 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import rs.ac.bg.fon.np.sc.commonLib.domen.Kupac;
 
 public class SkiPas implements OpstiDomenskiObjekat, Serializable {
 
@@ -17,7 +18,7 @@ public class SkiPas implements OpstiDomenskiObjekat, Serializable {
     @Expose
     private BigDecimal ukupnaCena;
     @Expose
-    private String imePrezimeKupca;
+    private Kupac kupac;
     @Expose
     private Date datumIzdavanja;
     @Expose
@@ -33,10 +34,10 @@ public class SkiPas implements OpstiDomenskiObjekat, Serializable {
         stavkeSkiPasa = new ArrayList<>();
     }
 
-    public SkiPas(long sifraSkiPasa, BigDecimal ukupnaCena, String imePrezimeKupca, Date datumIzdavanja, String sezona, List<StavkaSkiPasa> stavkeSkiPasa) {
+    public SkiPas(long sifraSkiPasa, BigDecimal ukupnaCena, Kupac kupac, Date datumIzdavanja, String sezona, List<StavkaSkiPasa> stavkeSkiPasa) {
         this.sifraSkiPasa = sifraSkiPasa;
         this.ukupnaCena = ukupnaCena;
-        this.imePrezimeKupca = imePrezimeKupca;
+        this.kupac = kupac;
         this.datumIzdavanja = datumIzdavanja;
         this.sezona = sezona;
         this.stavkeSkiPasa = stavkeSkiPasa;
@@ -66,12 +67,12 @@ public class SkiPas implements OpstiDomenskiObjekat, Serializable {
         this.ukupnaCena = ukupnaCena;
     }
 
-    public String getImePrezimeKupca() {
-        return imePrezimeKupca;
+    public Kupac getKupac() {
+        return kupac;
     }
 
-    public void setImePrezimeKupca(String imePrezimeKupca) {
-        this.imePrezimeKupca = imePrezimeKupca;
+    public void setKupac(Kupac kupac) {
+        this.kupac = kupac;
     }
 
     public Date getDatumIzdavanja() {
@@ -79,9 +80,6 @@ public class SkiPas implements OpstiDomenskiObjekat, Serializable {
     }
 
     public void setDatumIzdavanja(Date datumIzdavanja) {
-        /*SimpleDateFormat sm = new SimpleDateFormat("yyyy-MM-dd");
-        Date dDatum = datumIzdavanja;
-        datumIzdavanja = java.sql.Date.valueOf(sm.format(dDatum));*/
         this.datumIzdavanja = datumIzdavanja;
     }
 
@@ -89,7 +87,7 @@ public class SkiPas implements OpstiDomenskiObjekat, Serializable {
     public String vratiVrednostiAtributa() {
         SimpleDateFormat sm = new SimpleDateFormat("yyyy-MM-dd");
         datumIzdavanja = java.sql.Date.valueOf(sm.format(datumIzdavanja));
-        return ukupnaCena + ", " + (imePrezimeKupca == null ? null : "'" + imePrezimeKupca + "'")
+        return ukupnaCena + ", " + kupac.getIdKupca()
                 + ", " + "'" + datumIzdavanja + "'" + ", " + (sezona == null ? null : "'" + sezona + "'");
     }
 
@@ -97,8 +95,8 @@ public class SkiPas implements OpstiDomenskiObjekat, Serializable {
     public String postaviVrednostiAtributa() {
         SimpleDateFormat sm = new SimpleDateFormat("yyyy-MM-dd");
         datumIzdavanja = java.sql.Date.valueOf(sm.format(datumIzdavanja));
-        return "ukupnaCena = " + ukupnaCena + ", " + "imePrezimeKupca = "
-                + (imePrezimeKupca == null ? null : "'" + imePrezimeKupca + "'") + ", " + "datumIzdavanja = '"
+        return "ukupnaCena = " + ukupnaCena + ", " + "idKupca = "
+                + kupac.getIdKupca() + ", " + "datumIzdavanja = '"
                 + datumIzdavanja + "'" + ", sezona = "
                 + (sezona == null ? null : "'" + sezona + "'");
     }
@@ -115,14 +113,14 @@ public class SkiPas implements OpstiDomenskiObjekat, Serializable {
 
     @Override
     public String vratiUslovZaNadjiSlogove() {
-        return "imePrezimeKupca LIKE '%" + imePrezimeKupca + "%'";
+        return "idKupca = (SELECT idKupca FROM Kupac WHERE CONCAT(ime,' ',prezime) LIKE '%" + (kupac.getIme() == null ? "" : kupac.getIme()) + (kupac.getPrezime() == null ? "" : " " + kupac.getPrezime()) + "%')";
     }
 
     @Override
     public void napuni(ResultSet rs) throws SQLException {
         sifraSkiPasa = rs.getLong("sifraSkiPasa");
         ukupnaCena = rs.getBigDecimal("ukupnaCena");
-        imePrezimeKupca = rs.getString("imePrezimeKupca");
+        this.setKupac(new Kupac(rs.getLong("idKupca"), null, null, null));
         datumIzdavanja = new Date(rs.getDate("datumIzdavanja").getTime());
         sezona = rs.getString("sezona");
         stavkeSkiPasa = new ArrayList<>();
@@ -140,44 +138,15 @@ public class SkiPas implements OpstiDomenskiObjekat, Serializable {
 
     @Override
     public int vratiBrojVezanihObjekata() {
-        return 0;
+        return 1;
     }
 
     @Override
     public OpstiDomenskiObjekat vratiVezaniObjekat(int i) {
         if (i == 0) {
-            StavkaSkiPasa stavkaSkiPasa = new StavkaSkiPasa();
-            stavkaSkiPasa.setSkiPas(this);
-            return stavkaSkiPasa;
+            return kupac;
         }
         return null;
-    }
-
-    @Override
-    public void postaviVrednostVezanogObjekta(OpstiDomenskiObjekat vezo, int j) {
-        if (j < stavkeSkiPasa.size()) {
-            stavkeSkiPasa.set(j, (StavkaSkiPasa) vezo);
-        }
-    }
-
-    @Override
-    public int vratiBrojSlogovaVezanogObjekta(int i) {
-        if (i == 0) {
-            return stavkeSkiPasa.size();
-        }
-        return 0;
-    }
-
-    @Override
-    public void kreirajVezaniObjekat(int brojStavki, int i) {
-        if (i == 0) {
-            stavkeSkiPasa = new ArrayList<>();
-            for (int j = 0; j < brojStavki; j++) {
-                StavkaSkiPasa stavkaSkiPasa = new StavkaSkiPasa();
-                stavkaSkiPasa.setSkiPas(this);
-                stavkeSkiPasa.add(stavkaSkiPasa);
-            }
-        }
     }
 
     @Override
@@ -212,7 +181,7 @@ public class SkiPas implements OpstiDomenskiObjekat, Serializable {
 
     @Override
     public String vratiImenaAtrubita() {
-        return "ukupnaCena, imePrezimeKupca, datumIzdavanja, sezona";
+        return "ukupnaCena, idKupca, datumIzdavanja, sezona";
     }
 
     public String getSezona() {
@@ -221,5 +190,12 @@ public class SkiPas implements OpstiDomenskiObjekat, Serializable {
 
     public void setSezona(String sezona) {
         this.sezona = sezona;
+    }
+
+    @Override
+    public void postaviVrednostVezanogObjekta(OpstiDomenskiObjekat vezo, int i) {
+        if (i == 0) {
+            this.setKupac((Kupac) vezo);
+        }
     }
 }
