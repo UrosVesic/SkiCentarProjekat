@@ -9,7 +9,6 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
-import rs.ac.bg.fon.np.sc.commonLib.domen.Kupac;
 
 public class SkiPas implements OpstiDomenskiObjekat, Serializable {
 

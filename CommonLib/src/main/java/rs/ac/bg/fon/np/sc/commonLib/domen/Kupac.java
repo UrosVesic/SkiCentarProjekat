@@ -3,13 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package rs.ac.bg.fon.np.sc.commonLib.domen;
+package rs.ac.bg.fon.np.sc.commonlib.domen;
 
 import com.google.gson.annotations.Expose;
 import java.io.Serializable;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import rs.ac.bg.fon.np.sc.commonlib.domen.OpstiDomenskiObjekat;
 
 /**
  *
