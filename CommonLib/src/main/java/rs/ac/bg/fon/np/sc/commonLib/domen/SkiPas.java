@@ -112,7 +112,7 @@ public class SkiPas implements OpstiDomenskiObjekat, Serializable {
 
     @Override
     public String vratiUslovZaNadjiSlogove() {
-        return "idKupca = (SELECT idKupca FROM Kupac WHERE CONCAT(ime,' ',prezime) LIKE '%" + (kupac.getIme() == null ? "" : kupac.getIme()) + (kupac.getPrezime() == null ? "" : " " + kupac.getPrezime()) + "%')";
+        return "idKupca IN (SELECT idKupca FROM Kupac WHERE CONCAT(ime,' ',prezime) LIKE '%" + (kupac.getIme() == null ? "" : kupac.getIme()) + (kupac.getPrezime() == null ? "" : " " + kupac.getPrezime()) + "%')";
     }
 
     @Override
