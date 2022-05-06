@@ -131,7 +131,7 @@ public class Korisnik implements OpstiDomenskiObjekat, Serializable {
     @Override
     public OpstiDomenskiObjekat kreirajInstancu() {
         // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Not supported yet.");
+        return new Korisnik();
     }
 
     @Override
