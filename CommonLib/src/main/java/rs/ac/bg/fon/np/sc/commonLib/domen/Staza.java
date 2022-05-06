@@ -92,8 +92,8 @@ public class Staza implements OpstiDomenskiObjekat, Serializable {
 
     @Override
     public String vratiUslovZaNadjiSlogove() {
-        return "sifraSkiCentra = (SELECT sifraSkiCentra FROM skiCentar WHERE NazivSkiCentra LIKE '"
-                + skiCentar.getNazivSkiCentra() + "')";
+        return "sifraSkiCentra = (SELECT sifraSkiCentra FROM skiCentar WHERE NazivSkiCentra LIKE '%"
+                + skiCentar.getNazivSkiCentra() + "%')";
     }
 
     @Override
