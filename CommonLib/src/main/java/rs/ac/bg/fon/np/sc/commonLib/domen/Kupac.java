@@ -93,10 +93,6 @@ public class Kupac implements Serializable, OpstiDomenskiObjekat {
         return null;
     }
 
-    @Override
-    public void postaviVrednostVezanogObjekta(OpstiDomenskiObjekat vezo, int i) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
 
     @Override
     public void postaviVrednostPK(long id) {

@@ -127,10 +127,6 @@ public class SkiCentar implements OpstiDomenskiObjekat {
         return null;
     }
 
-    @Override
-    public void postaviVrednostVezanogObjekta(OpstiDomenskiObjekat vezo, int i) {
-        throw new UnsupportedOperationException("Not supported yet.");
-    }
 
     @Override
     public boolean equals(Object obj) {
