@@ -25,7 +25,7 @@ public interface OpstiDomenskiObjekat {
 
     public OpstiDomenskiObjekat vratiVezaniObjekat(int i);
 
-    public void postaviVrednostVezanogObjekta(OpstiDomenskiObjekat vezo, int i);
+    default public void postaviVrednostVezanogObjekta(OpstiDomenskiObjekat vezo, int i){};
 
     default String vratiUslovZaPromeniSlog() {
         return vratiUslovZaNadjiSlog();
