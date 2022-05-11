@@ -1,0 +1,5 @@
+uros@gmail.com ,uros1234 ,Uros ,Vesic ,"'uros@gmail.com', 'uros1234', 'Uros', 'Vesic'"
+,uros1234 ,Uros ,Vesic ,"null, 'uros1234', 'Uros', 'Vesic'"
+uros@gmail.com ,,Uros ,Vesic ,"'uros@gmail.com', null, 'Uros', 'Vesic'"
+uros@gmail.com ,uros1234 ,,Vesic ,"'uros@gmail.com', 'uros1234', null, 'Vesic'"
+uros@gmail.com ,uros1234 ,Uros ,,"'uros@gmail.com', 'uros1234', 'Uros', null"
