@@ -42,7 +42,7 @@ public interface OpstiDomenskiObjekat {
     public default void kreirajVezaniObjekat(int brojStavki, int i) {
 
     }
-    
+
     public default String vratiUslovZaNadjiSlog2(){
         return vratiUslovZaNadjiSlog();
     }
