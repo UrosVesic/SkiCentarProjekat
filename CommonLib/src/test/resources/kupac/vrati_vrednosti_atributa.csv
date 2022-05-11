@@ -1,0 +1,4 @@
+,Pera,Peric,"null, 'Pera', 'Peric'",
+12345,,Peric,"'12345', null, 'Peric'",
+12345,Pera,,"'12345', 'Pera', null",
+12345,Pera,Peric,"'12345', 'Pera', 'Peric'"

@@ -1,0 +1,8 @@
+12345,Uros,Vesic,"brojLK = '12345', ime = 'Uros', prezime = 'Vesic'"
+,Uros,Vesic,"brojLK = null, ime = 'Uros', prezime = 'Vesic'"
+12345,,Vesic,"brojLK = '12345', ime = null, prezime = 'Vesic'"
+12345,Uros,,"brojLK = '12345', ime = 'Uros', prezime = null"
+,,Vesic,"brojLK = null, ime = null, prezime = 'Vesic'"
+,Uros,,"brojLK = null, ime = 'Uros', prezime = null"
+12345,,,"brojLK = '12345', ime = null, prezime = null"
+,,,"brojLK = null, ime = null, prezime = null"
