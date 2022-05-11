@@ -9,6 +9,7 @@ import com.google.gson.annotations.Expose;
 import java.io.Serializable;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.Objects;
 
 /**
  *
@@ -93,7 +94,6 @@ public class Kupac implements Serializable, OpstiDomenskiObjekat {
         return null;
     }
 
-
     @Override
     public void postaviVrednostPK(long id) {
         this.setIdKupca(id);
@@ -135,5 +135,31 @@ public class Kupac implements Serializable, OpstiDomenskiObjekat {
     public String toString() {
         return ime + " " + prezime;
     }
+
+    @Override
+    public int hashCode() {
+        int hash = 3;
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Kupac other = (Kupac) obj;
+        if (!Objects.equals(this.brojLK, other.brojLK)) {
+            return false;
+        }
+        return true;
+    }
+    
+    
 
 }
