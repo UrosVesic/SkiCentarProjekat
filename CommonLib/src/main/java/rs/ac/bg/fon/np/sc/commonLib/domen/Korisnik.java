@@ -96,7 +96,8 @@ public class Korisnik implements OpstiDomenskiObjekat, Serializable {
 
     @Override
     public String vratiVrednostiAtributa() {
-        return "'" + email + "', '" + sifra + "', '" + ime + "', '" + prezime + "'";
+        return (email == null ? null : "'" + email + "'") + ", " + (sifra == null ? null : "'" + sifra + "'") + ", "
+                + (ime == null ? null : "'" + ime + "'") + ", " + (prezime == null ? null : "'" + prezime + "'");
     }
 
     @Override
@@ -117,6 +118,7 @@ public class Korisnik implements OpstiDomenskiObjekat, Serializable {
 
     @Override
     public void napuni(ResultSet rs) throws SQLException {
+        id = rs.getLong("id");
         ime = rs.getString("ime");
         prezime = rs.getString("prezime");
         email = rs.getString("email");
