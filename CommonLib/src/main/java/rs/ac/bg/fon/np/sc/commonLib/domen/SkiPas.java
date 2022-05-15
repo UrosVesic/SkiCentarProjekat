@@ -85,18 +85,22 @@ public class SkiPas implements OpstiDomenskiObjekat, Serializable {
     @Override
     public String vratiVrednostiAtributa() {
         SimpleDateFormat sm = new SimpleDateFormat("yyyy-MM-dd");
-        datumIzdavanja = java.sql.Date.valueOf(sm.format(datumIzdavanja));
-        return ukupnaCena + ", " + kupac.getIdKupca()
-                + ", " + "'" + datumIzdavanja + "'" + ", " + (sezona == null ? null : "'" + sezona + "'");
+        if (datumIzdavanja != null) {
+            datumIzdavanja = java.sql.Date.valueOf(sm.format(datumIzdavanja));
+        }
+        return ukupnaCena + ", " + (kupac == null ? null : kupac.getIdKupca())
+                + ", " + (datumIzdavanja == null ? null : "'" + datumIzdavanja + "'") + ", " + (sezona == null ? null : "'" + sezona + "'");
     }
 
     @Override
     public String postaviVrednostiAtributa() {
         SimpleDateFormat sm = new SimpleDateFormat("yyyy-MM-dd");
-        datumIzdavanja = java.sql.Date.valueOf(sm.format(datumIzdavanja));
+        if (datumIzdavanja != null) {
+            datumIzdavanja = java.sql.Date.valueOf(sm.format(datumIzdavanja));
+        }
         return "ukupnaCena = " + ukupnaCena + ", " + "idKupca = "
-                + kupac.getIdKupca() + ", " + "datumIzdavanja = '"
-                + datumIzdavanja + "'" + ", sezona = "
+                + (kupac == null ? null : kupac.getIdKupca()) + ", " + "datumIzdavanja = "
+                + (datumIzdavanja == null ? null : "'" + datumIzdavanja + "'") + ", sezona = "
                 + (sezona == null ? null : "'" + sezona + "'");
     }
 
