@@ -29,6 +29,10 @@ public class Kupac implements Serializable, OpstiDomenskiObjekat {
     public Kupac() {
     }
 
+    public Kupac(long idKupca) {
+        this.idKupca = idKupca;
+    }
+
     public Kupac(long idKupca, String brojLK, String ime, String prezime) {
         this.idKupca = idKupca;
         this.brojLK = brojLK;
@@ -159,7 +163,5 @@ public class Kupac implements Serializable, OpstiDomenskiObjekat {
         }
         return true;
     }
-    
-    
 
 }
