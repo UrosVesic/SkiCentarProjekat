@@ -39,9 +39,6 @@ public class KupacTest {
         odo = null;
     }
 
-    public void vratiImenaAtrubita() {
-
-    }
 
     @ParameterizedTest
     @CsvFileSource(resources = "/kupac/vrati_vrednosti_atributa.csv")
