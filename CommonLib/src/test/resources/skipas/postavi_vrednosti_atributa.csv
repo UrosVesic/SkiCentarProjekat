@@ -1,0 +1,5 @@
+150,2,2022-05-15,2021/2022,"ukupnaCena = 150, idKupca = 2, datumIzdavanja = '2022-05-15', sezona = '2021/2022'"
+,2,2022-05-15,2021/2022,"ukupnaCena = null, idKupca = 2, datumIzdavanja = '2022-05-15', sezona = '2021/2022'"
+150,,2022-05-15,2021/2022,"ukupnaCena = 150, idKupca = null, datumIzdavanja = '2022-05-15', sezona = '2021/2022'"
+150,2,,2021/2022,"ukupnaCena = 150, idKupca = 2, datumIzdavanja = null, sezona = '2021/2022'"
+150,2,2022-05-15,,"ukupnaCena = 150, idKupca = 2, datumIzdavanja = '2022-05-15', sezona = null"
