@@ -1,0 +1,5 @@
+5a,Krst,Laka,2,"'5a', 'Krst', 'Laka', 2"
+,Krst,Laka,2,"null, 'Krst', 'Laka', 2"
+5a,,Laka,2,"'5a', null, 'Laka', 2"
+5a,Krst,,2,"'5a', 'Krst', null, 2"
+5a,Krst,Laka,,"'5a', 'Krst', 'Laka', null"
