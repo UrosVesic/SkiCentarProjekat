@@ -22,6 +22,10 @@ public class SkiKarta implements OpstiDomenskiObjekat, Serializable {
     public SkiKarta() {
     }
 
+    public SkiKarta(long sifraSkiKarte) {
+        this.sifraSkiKarte = sifraSkiKarte;
+    }
+
     public SkiKarta(long sifraSkiKarte, VrstaSkiKarte vrstaSkiKarte, BigDecimal cenaSkiKarte, SkiCentar skiCentar) {
         this.sifraSkiKarte = sifraSkiKarte;
         this.vrstaSkiKarte = vrstaSkiKarte;
