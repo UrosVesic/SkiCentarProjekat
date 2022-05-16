@@ -16,6 +16,10 @@ public class Staza implements OpstiDomenskiObjekat, Serializable {
 
     }
 
+    public Staza(long idStaze) {
+        this.idStaze = idStaze;
+    }
+
     public Staza(long id, String brojStaze, String nazivStaze, String tipStaze, SkiCentar skiCentar) {
         this.idStaze = id;
         this.brojStaze = brojStaze;
@@ -99,14 +103,11 @@ public class Staza implements OpstiDomenskiObjekat, Serializable {
     @Override
     public void napuni(ResultSet rs) throws SQLException {
 
-        Staza s = (Staza) this;
-        s.setIdStaze(rs.getLong("idStaze"));
-        s.setBrojStaze(rs.getString("brojStaze"));
-        s.setNazivStaze(rs.getString("nazivStaze"));
-        s.setTipStaze(rs.getString("tipStaze"));
-        SkiCentar sc = new SkiCentar();
-        sc.setSifraSkiCentra(rs.getLong("sifraSkiCentra"));
-        s.setSkiCentar(sc);
+        this.setIdStaze(rs.getLong("idStaze"));
+        this.setBrojStaze(rs.getString("brojStaze"));
+        this.setNazivStaze(rs.getString("nazivStaze"));
+        this.setTipStaze(rs.getString("tipStaze"));
+        this.setSkiCentar(new SkiCentar(rs.getLong("sifraSkiCentra")));
 
     }
 
