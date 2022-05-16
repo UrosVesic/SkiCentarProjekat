@@ -33,6 +33,10 @@ public class SkiPas implements OpstiDomenskiObjekat, Serializable {
         stavkeSkiPasa = new ArrayList<>();
     }
 
+    public SkiPas(long sifraSkiPasa) {
+        this.sifraSkiPasa = sifraSkiPasa;
+    }
+
     public SkiPas(long sifraSkiPasa, BigDecimal ukupnaCena, Kupac kupac, Date datumIzdavanja, String sezona, List<StavkaSkiPasa> stavkeSkiPasa) {
         this.sifraSkiPasa = sifraSkiPasa;
         this.ukupnaCena = ukupnaCena;
