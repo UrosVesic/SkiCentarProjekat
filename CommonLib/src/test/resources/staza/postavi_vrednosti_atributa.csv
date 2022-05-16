@@ -1,0 +1,5 @@
+5a,Krst,Laka,2,"brojStaze = '5a', nazivStaze = 'Krst', tipStaze = 'Laka', sifraSkiCentra = 2"
+,Krst,Laka,2,"brojStaze = null, nazivStaze = 'Krst', tipStaze = 'Laka', sifraSkiCentra = 2"
+5a,,Laka,2,"brojStaze = '5a', nazivStaze = null, tipStaze = 'Laka', sifraSkiCentra = 2"
+5a,Krst,,2,"brojStaze = '5a', nazivStaze = 'Krst', tipStaze = null, sifraSkiCentra = 2"
+5a,Krst,Laka,,"brojStaze = '5a', nazivStaze = 'Krst', tipStaze = 'Laka', sifraSkiCentra = null"
