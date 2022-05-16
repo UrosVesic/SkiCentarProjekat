@@ -82,9 +82,9 @@ public class StavkaSkiPasa implements OpstiDomenskiObjekat, Serializable {
     }
 
     public void setPocetakVazenja(Date pocetakVazenja) {
-        SimpleDateFormat sm = new SimpleDateFormat("yyyy-MM-dd");
-        Date dDatum = pocetakVazenja;
-        this.pocetakVazenja = java.sql.Date.valueOf(sm.format(dDatum));
+        //SimpleDateFormat sm = new SimpleDateFormat("yyyy-MM-dd");
+        //Date dDatum = pocetakVazenja;
+        this.pocetakVazenja = pocetakVazenja;
     }
 
     public Date getZavrsetakVazenja() {
@@ -92,9 +92,9 @@ public class StavkaSkiPasa implements OpstiDomenskiObjekat, Serializable {
     }
 
     public void setZavrsetakVazenja(Date zavrsetakVazenja) {
-        SimpleDateFormat sm = new SimpleDateFormat("yyyy-MM-dd");
-        Date dDatum = zavrsetakVazenja;
-        this.zavrsetakVazenja = java.sql.Date.valueOf(sm.format(dDatum));
+        //SimpleDateFormat sm = new SimpleDateFormat("yyyy-MM-dd");
+        //Date dDatum = zavrsetakVazenja;
+        this.zavrsetakVazenja = zavrsetakVazenja;
     }
 
     @Override
@@ -102,12 +102,14 @@ public class StavkaSkiPasa implements OpstiDomenskiObjekat, Serializable {
         SimpleDateFormat sm = new SimpleDateFormat("yyyy-MM-dd");
         Date dDatumZ = zavrsetakVazenja;
         Date dDatumP = pocetakVazenja;
-        this.zavrsetakVazenja = java.sql.Date.valueOf(sm.format(dDatumZ));
-        this.pocetakVazenja = java.sql.Date.valueOf(sm.format(dDatumP));
-        System.out.println(pocetakVazenja);
-        System.out.println(zavrsetakVazenja);
-        return (skiPas == null ? null : skiPas.getSifraSkiPasa()) + ", " + vrednostStavke + ", '" + pocetakVazenja + "'"
-                + ", '" + zavrsetakVazenja + "'" + ", " + (skiKarta == null ? null : skiKarta.getSifraSkiKarte());
+        if (pocetakVazenja != null) {
+            this.pocetakVazenja = java.sql.Date.valueOf(sm.format(dDatumP));
+        }
+        if (zavrsetakVazenja != null) {
+            this.zavrsetakVazenja = java.sql.Date.valueOf(sm.format(dDatumZ));
+        }
+        return (skiPas == null ? null : skiPas.getSifraSkiPasa()) + ", " + vrednostStavke + ", " + (pocetakVazenja == null ? null : "'" + pocetakVazenja + "'")
+                + ", " + (zavrsetakVazenja == null ? null : "'" + zavrsetakVazenja + "'") + ", " + (skiKarta == null ? null : skiKarta.getSifraSkiKarte());
     }
 
     @Override
@@ -115,18 +117,20 @@ public class StavkaSkiPasa implements OpstiDomenskiObjekat, Serializable {
         SimpleDateFormat sm = new SimpleDateFormat("yyyy-MM-dd");
         Date dDatumZ = zavrsetakVazenja;
         Date dDatumP = pocetakVazenja;
-        this.zavrsetakVazenja = java.sql.Date.valueOf(sm.format(dDatumZ));
-        this.pocetakVazenja = java.sql.Date.valueOf(sm.format(dDatumP));
-        System.out.println(pocetakVazenja);
-        System.out.println(zavrsetakVazenja);
+         if (pocetakVazenja != null) {
+            this.pocetakVazenja = java.sql.Date.valueOf(sm.format(dDatumP));
+        }
+        if (zavrsetakVazenja != null) {
+            this.zavrsetakVazenja = java.sql.Date.valueOf(sm.format(dDatumZ));
+        }
         return "sifraSkiPasa= " + (skiPas == null ? null : skiPas.getSifraSkiPasa()) + ", " + "vrednostStavke = "
-                + vrednostStavke + ", " + "pocetakVazenja = " + "'" + pocetakVazenja + "'" + ", " + "zavrsetakVazenja = "
-                + "'" + zavrsetakVazenja + "'" + ", " + "sifraSkiKarte = " + (skiKarta == null ? null : skiKarta.getSifraSkiKarte());
+                + vrednostStavke + ", " + "pocetakVazenja = " + (pocetakVazenja == null ? null : "'" + pocetakVazenja + "'") + ", " + "zavrsetakVazenja = "
+                + (zavrsetakVazenja == null ? null : "'" + zavrsetakVazenja + "'") + ", " + "sifraSkiKarte = " + (skiKarta == null ? null : skiKarta.getSifraSkiKarte());
     }
 
     @Override
     public String vratiImeKlase() {
-        return "stavkaSkiPasa";
+        return "StavkaSkiPasa";
     }
 
     @Override
