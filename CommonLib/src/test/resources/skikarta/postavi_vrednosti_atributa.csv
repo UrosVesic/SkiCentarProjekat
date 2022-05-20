@@ -1,0 +1,5 @@
+TRODNEVNA,150,2,"vrstaSkiKarte = 'TRODNEVNA', cenaSkiKarte = 150, sifraSkiCentra  = 2"
+,150,2,"vrstaSkiKarte = null, cenaSkiKarte = 150, sifraSkiCentra  = 2"
+TRODNEVNA,,2,"vrstaSkiKarte = 'TRODNEVNA', cenaSkiKarte = null, sifraSkiCentra  = 2"
+TRODNEVNA,150,,"vrstaSkiKarte = 'TRODNEVNA', cenaSkiKarte = 150, sifraSkiCentra  = null"
+

@@ -1,0 +1,6 @@
+2, 150, 2022-05-15, 2022-05-15, 3,"sifraSkiPasa= 2, vrednostStavke = 150, pocetakVazenja = '2022-05-15', zavrsetakVazenja = '2022-05-15', sifraSkiKarte = 3"
+, 150, 2022-05-15, 2022-05-15, 3,"sifraSkiPasa= null, vrednostStavke = 150, pocetakVazenja = '2022-05-15', zavrsetakVazenja = '2022-05-15', sifraSkiKarte = 3"
+2, , 2022-05-15, 2022-05-15, 3,"sifraSkiPasa= 2, vrednostStavke = null, pocetakVazenja = '2022-05-15', zavrsetakVazenja = '2022-05-15', sifraSkiKarte = 3"
+2, 150, , 2022-05-15, 3,"sifraSkiPasa= 2, vrednostStavke = 150, pocetakVazenja = null, zavrsetakVazenja = '2022-05-15', sifraSkiKarte = 3"
+2, 150, 2022-05-15, , 3,"sifraSkiPasa= 2, vrednostStavke = 150, pocetakVazenja = '2022-05-15', zavrsetakVazenja = null, sifraSkiKarte = 3"
+2, 150, 2022-05-15, 2022-05-15, ,"sifraSkiPasa= 2, vrednostStavke = 150, pocetakVazenja = '2022-05-15', zavrsetakVazenja = '2022-05-15', sifraSkiKarte = null"
