@@ -77,6 +77,24 @@ public class SkiCentarTest {
     }
 
     @Test
+    public void vratiUslovZaNadjiSlog2Test() {
+        odo.setNazivSkiCentra("Kop");
+        Assertions.assertThat(odo.vratiUslovZaNadjiSlog2()).isEqualTo("nazivSkiCentra LIKE '%Kop%'");
+    }
+
+    @Test
+    public void toStringTest() {
+        odo.setNazivSkiCentra("Kopaonik");
+        Assertions.assertThat(odo.toString()).isEqualTo("Kopaonik");
+    }
+
+    @Test
+    public void vratiUslovZaPromeniSlogTest() {
+        odo.setSifraSkiCentra(23);
+        Assertions.assertThat(odo.vratiUslovZaPromeniSlog()).isEqualTo("sifraSkiCentra = 23");
+    }
+
+    @Test
     public void napuniTest() throws Exception {
         AutoCloseable ac = MockitoAnnotations.openMocks(this);
 

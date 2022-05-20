@@ -87,6 +87,36 @@ public class SkiPasTest {
     }
 
     @Test
+    public void vratiUslovZaNadjiSlogoveTest() {
+        odo.setKupac(new Kupac(0, null, "Uros", "Vesic"));
+        Assertions.assertThat(odo.vratiUslovZaNadjiSlogove()).isEqualTo("idKupca IN (SELECT idKupca FROM Kupac WHERE CONCAT(ime,' ',prezime) LIKE '%Uros Vesic%')");
+    }
+
+    @ParameterizedTest
+    @CsvSource({"0", "1"})
+    public void vratiVezaniObjekatTest(int i) {
+        Kupac k = new Kupac(123);
+        odo.setKupac(k);
+        if (i == 0) {
+            Assertions.assertThat(odo.vratiVezaniObjekat(i)).isEqualTo(k);
+        } else {
+            Assertions.assertThat(odo.vratiVezaniObjekat(i)).isEqualTo(null);
+        }
+    }
+    
+    @ParameterizedTest
+    @CsvSource({"0", "1"})
+    public void postaviVrednostVezanogObjektaTest(int i) {
+        Kupac k = new Kupac(123);
+        odo.postaviVrednostVezanogObjekta(k, i);
+        if (i == 0) {
+            Assertions.assertThat(odo.vratiVezaniObjekat(i)).isEqualTo(k);
+        } else {
+            Assertions.assertThat(odo.vratiVezaniObjekat(i)).isEqualTo(null);
+        }
+    }
+
+    @Test
     public void napuniTest() throws Exception {
         AutoCloseable ac = MockitoAnnotations.openMocks(this);
 

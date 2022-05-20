@@ -82,6 +82,36 @@ public class StazaTest {
         odo.setIdStaze(id);
         Assertions.assertThat(odo.vratiUslovZaNadjiSlog()).isEqualTo("idStaze = 23");
     }
+    
+    @Test
+    public void vratiUslovZaNadjiSlogoveTest(){
+        odo.setSkiCentar(new SkiCentar(0, "Kop", null, null));
+        Assertions.assertThat(odo.vratiUslovZaNadjiSlogove()).isEqualTo("sifraSkiCentra = (SELECT sifraSkiCentra FROM skiCentar WHERE NazivSkiCentra LIKE '%Kop%')");
+    }
+    
+    @ParameterizedTest
+    @CsvSource({"0", "1"})
+    public void vratiVezaniObjekatTest(int i) {
+        SkiCentar sc = new SkiCentar(123);
+        odo.setSkiCentar(sc);
+        if (i == 0) {
+            Assertions.assertThat(odo.vratiVezaniObjekat(i)).isEqualTo(sc);
+        } else {
+            Assertions.assertThat(odo.vratiVezaniObjekat(i)).isEqualTo(null);
+        }
+    }
+    
+    @ParameterizedTest
+    @CsvSource({"0", "1"})
+    public void postaviVrednostVezanogObjektaTest(int i) {
+        SkiCentar sc = new SkiCentar(123);
+        odo.postaviVrednostVezanogObjekta(sc, i);
+        if (i == 0) {
+            Assertions.assertThat(odo.vratiVezaniObjekat(i)).isEqualTo(sc);
+        } else {
+            Assertions.assertThat(odo.vratiVezaniObjekat(i)).isEqualTo(null);
+        }
+    }
 
     @Test
     public void napuniTest() throws Exception {

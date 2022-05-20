@@ -95,6 +95,49 @@ public class SkiKartaTest {
     }
 
     @Test
+    public void vratiUslovZaNadjiSlogoveTest() {
+        odo.setCenaSkiKarte(new BigDecimal(2000));
+        Assertions.assertThat(odo.vratiUslovZaNadjiSlogove()).isEqualTo("cenaSkiKarte <= 2000");
+    }
+
+    @ParameterizedTest
+    @CsvSource({"0", "1"})
+    public void vratiVezaniObjekatTest(int i) {
+        SkiCentar sc = new SkiCentar(123);
+        odo.setSkiCentar(sc);
+        if (i == 0) {
+            Assertions.assertThat(odo.vratiVezaniObjekat(i)).isEqualTo(sc);
+        } else {
+            Assertions.assertThat(odo.vratiVezaniObjekat(i)).isEqualTo(null);
+        }
+    }
+
+    @ParameterizedTest
+    @CsvSource({"0", "1"})
+    public void postaviVrednostVezanogObjektaTest(int i) {
+        SkiCentar sc = new SkiCentar(123);
+        odo.postaviVrednostVezanogObjekta(sc, i);
+        if (i == 0) {
+            Assertions.assertThat(odo.vratiVezaniObjekat(i)).isEqualTo(sc);
+        } else {
+            Assertions.assertThat(odo.vratiVezaniObjekat(i)).isEqualTo(null);
+        }
+    }
+
+    @Test
+    public void vratiUslovZaPromeniSlogTest() {
+        odo.setSifraSkiKarte(23);
+        Assertions.assertThat(odo.vratiUslovZaPromeniSlog()).isEqualTo("sifraSkiKarte= 23");
+    }
+
+    @Test
+    public void toStringTest() {
+        odo.setSkiCentar(new SkiCentar(0, "Kopaonik", null, null));
+        odo.setVrstaSkiKarte(VrstaSkiKarte.JEDNODNEVNA);
+        Assertions.assertThat(odo.toString()).isEqualTo("Kopaonik JEDNODNEVNA");
+    }
+
+    @Test
     public void napuniTest() throws Exception {
         AutoCloseable ac = MockitoAnnotations.openMocks(this);
 
