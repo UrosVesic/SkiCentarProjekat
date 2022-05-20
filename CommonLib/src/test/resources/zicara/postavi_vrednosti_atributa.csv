@@ -1,0 +1,5 @@
+Pancicev vrh,09-17,2000,true,2,"nazivZicare = 'Pancicev vrh', radnoVreme = '09-17', kapacitet = 2000, uFunkciji = true, sifraSkiCentra = 2"
+,09-17,2000,true,2,"nazivZicare = null, radnoVreme = '09-17', kapacitet = 2000, uFunkciji = true, sifraSkiCentra = 2"
+Pancicev vrh,,2000,true,2,"nazivZicare = 'Pancicev vrh', radnoVreme = null, kapacitet = 2000, uFunkciji = true, sifraSkiCentra = 2"
+Pancicev vrh,09-17,0,false,2,"nazivZicare = 'Pancicev vrh', radnoVreme = '09-17', kapacitet = 0, uFunkciji = false, sifraSkiCentra = 2"
+Pancicev vrh,09-17,2000,true,,"nazivZicare = 'Pancicev vrh', radnoVreme = '09-17', kapacitet = 2000, uFunkciji = true, sifraSkiCentra = null"
