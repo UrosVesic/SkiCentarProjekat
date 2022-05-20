@@ -13,7 +13,7 @@ import java.util.Objects;
  *
  * @author UrosVesic
  */
-public class Korisnik implements rs.ac.bg.fon.np.sc.commonlib.domen.OpstiDomenskiObjekat{
+public class Korisnik implements OpstiDomenskiObjekat{
      private long id;
     private String ime;
     private String prezime;
