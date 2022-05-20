@@ -65,10 +65,42 @@ public class KorisnikTest {
         odo = new Korisnik(null, null, "uros@uros.com", "uros1234");
         Assertions.assertThat(odo.vratiUslovZaNadjiSlog()).isEqualTo("email LIKE'uros@uros.com' AND sifra LIKE 'uros1234'");
     }
-
-    public void postaviVrednostPKTest(long id) {
+    
+    @Test
+    public void postaviVrednostPKTest() {
         odo.postaviVrednostPK(25);
         Assertions.assertThat(odo.getId()).isEqualTo(25);
+    }
+    
+    @Test
+    public void kreirajInstancuTest() {
+        Korisnik k = new Korisnik();
+        Assertions.assertThat(odo.kreirajInstancu()).isEqualTo(k);
+    }
+    
+     @Test
+    public void vratiImenaAtrubitaTest() {
+        Assertions.assertThat(odo.vratiImenaAtrubita()).isEqualTo("ime, prezime, email, sifra");
+    }
+    
+    @Test
+    public void napuniTest() throws Exception{
+         AutoCloseable ac = MockitoAnnotations.openMocks(this);
+
+        BDDMockito.given(rs.getLong("id")).willReturn(1l);
+        BDDMockito.given(rs.getString("ime")).willReturn("Uros");
+        BDDMockito.given(rs.getString("prezime")).willReturn("Vesic");
+        BDDMockito.given(rs.getString("email")).willReturn("uros@uros.com");
+        BDDMockito.given(rs.getString("sifra")).willReturn("uros99");
+
+        odo.napuni(rs);
+        Assertions.assertThat(odo.getId()).isEqualTo(1);
+        Assertions.assertThat(odo.getIme()).isEqualTo("Uros");
+        Assertions.assertThat(odo.getPrezime()).isEqualTo("Vesic");
+        Assertions.assertThat(odo.getEmail()).isEqualTo("uros@uros.com");
+        Assertions.assertThat(odo.getSifra()).isEqualTo("uros99");
+
+        ac.close();
     }
 
 }
