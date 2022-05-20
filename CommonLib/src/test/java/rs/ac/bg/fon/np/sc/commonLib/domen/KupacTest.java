@@ -39,7 +39,6 @@ public class KupacTest {
         odo = null;
     }
 
-
     @ParameterizedTest
     @CsvFileSource(resources = "/kupac/vrati_vrednosti_atributa.csv")
     public void vratiVrednostiAtributaTest(String brojLK, String ime, String prezime, String rezultat) {
@@ -116,6 +115,14 @@ public class KupacTest {
     public void postaviVrednostPKTest(long id) {
         odo.postaviVrednostPK(id);
         Assertions.assertThat(odo.getIdKupca()).isEqualTo(id);
+    }
+
+    @Test
+    public void toStringTest() {
+        odo.setIme("Uros");
+        odo.setPrezime("Vesic");
+        Assertions.assertThat(odo.toString()).isEqualTo("Uros Vesic");
+
     }
 
 }
