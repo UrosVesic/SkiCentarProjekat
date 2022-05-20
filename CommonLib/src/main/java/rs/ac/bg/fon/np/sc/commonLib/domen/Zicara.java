@@ -3,6 +3,7 @@ package rs.ac.bg.fon.np.sc.commonlib.domen;
 import java.io.Serializable;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.Objects;
 
 public class Zicara implements OpstiDomenskiObjekat, Serializable {
 
@@ -114,9 +115,7 @@ public class Zicara implements OpstiDomenskiObjekat, Serializable {
         radnoVreme = rs.getString("radnoVreme");
         kapacitet = rs.getInt("kapacitet");
         UFunkciji = rs.getBoolean("uFunkciji");
-        SkiCentar sc = new SkiCentar();
-        sc.setSifraSkiCentra(rs.getLong("sifraSkiCentra"));
-        skiCentar = sc;
+        skiCentar = new SkiCentar(rs.getLong("sifraSkiCentra"));
 
     }
 
@@ -159,5 +158,27 @@ public class Zicara implements OpstiDomenskiObjekat, Serializable {
     public String vratiImenaAtrubita() {
         return "nazivZicare, radnoVreme, kapacitet, UFunkciji, sifraSkiCentra";
     }
+
+   
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Zicara other = (Zicara) obj;
+        if (!Objects.equals(this.nazivZicare, other.nazivZicare)) {
+            return false;
+        }
+        return true;
+    }
+
+    
 
 }
