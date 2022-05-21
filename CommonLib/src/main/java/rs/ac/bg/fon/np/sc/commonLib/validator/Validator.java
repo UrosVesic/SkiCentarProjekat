@@ -10,6 +10,8 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Collection;
+import java.util.Date;
 import java.util.List;
 import java.util.stream.Collectors;
 import rs.ac.bg.fon.np.sc.commonlib.domen.SkiPas;
@@ -33,6 +35,12 @@ public class Validator {
 
     public Validator validateNotNullOrEmpty(String value, String errorMessage) throws ValidationException {
         if (value == null || value.trim().isEmpty()) {
+            this.validationErros.add(errorMessage);
+        }
+        return this;
+    }
+    public Validator validateNotNullOrEmpty(Collection value, String errorMessage) throws ValidationException {
+        if (value == null || value.isEmpty()) {
             this.validationErros.add(errorMessage);
         }
         return this;
@@ -79,13 +87,14 @@ public class Validator {
         return this;
     }
 
-    public void throwIfInvalide() throws ValidationException {
+    public Validator throwIfInvalide() throws ValidationException {
         if (!validationErros.isEmpty()) {
             throw new ValidationException(this.validationErros.stream().collect(Collectors.joining("\n")));
         }
+        return this;
     }
 
-    public Validator validirajFormatRadnogVremena(String radnoVreme, String poruka) {
+    public Validator validateWorkingHoursFormat(String radnoVreme, String poruka) {
         int i = 0;
         if (radnoVreme == null) {
             return this;
@@ -117,7 +126,7 @@ public class Validator {
         return this;
     }
 
-    public Validator validirajFormatMejla(String email, String poruka) {
+    public Validator validateEmailFormat(String email, String poruka) {
         if (!email.contains("@")) {
             this.validationErros.add(poruka);
         }
@@ -131,7 +140,7 @@ public class Validator {
         return this;
     }
 
-    public Validator validirajDaLiPostojeStavkeZaPeriod(StavkaSkiPasa stavka, SkiPas skiPas, String poruka) {
+    public Validator validateIfItemsExistForPeriod(StavkaSkiPasa stavka, SkiPas skiPas, String poruka) {
         for (StavkaSkiPasa stavkaPostojeca : skiPas.getStavkeSkiPasa()) {
 
             if (stavka != stavkaPostojeca) {
@@ -151,27 +160,40 @@ public class Validator {
                     this.validationErros.add(poruka);
                     return this;
                 }
-//                if (stavka.getPocetakVazenja().compareTo(stavkaPostojeca.getZavrsetakVazenja()) == 0) {
-//                    this.validationErros.add(poruka);
-//                    return this;
-//                }
             }
         }
         return this;
     }
 
-    public Validator validirajDaLiJeDatumStavkeUSezoni(StavkaSkiPasa stavka, SkiPas skiPas, String poruka) {
+    public Validator validateIfDateIsInSeason(Date date, String season, String poruka) {
         Calendar calendar = Calendar.getInstance();
-        calendar.setTime(stavka.getPocetakVazenja());
+        calendar.setTime(date);
         int godina = calendar.get(Calendar.YEAR);
         int mesec = calendar.get(Calendar.MONTH);
-        String[] godineSezone = skiPas.getSezona().split("/");
+        String[] godineSezone = season.split("/");
         if ((godineSezone[0].equals(godina + "") && mesec > 5) || (godineSezone[1].equals(godina + "") && mesec <= 5)) {
             return this;
         } else {
             this.validationErros.add(poruka);
             return this;
         }
+    }
+
+    public Validator validateSeasonFormat(String sezona, String poruka) {
+        String[] godine = sezona.split("/");
+        try {
+            if (godine == null || godine.length != 2) {
+                throw new IllegalArgumentException();
+            }
+            Integer.parseInt(godine[0]);
+            Integer.parseInt(godine[1]);
+        } catch (NumberFormatException ex) {
+            this.validationErros.add(poruka);
+        } catch (IllegalArgumentException ex) {
+            this.validationErros.add(poruka);
+        }
+
+        return this;
     }
 
 }
