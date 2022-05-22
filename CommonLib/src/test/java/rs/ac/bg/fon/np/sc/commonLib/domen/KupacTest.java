@@ -66,7 +66,7 @@ public class KupacTest {
 
     @Test
     public void vratiImeKlaseTest() {
-        Assertions.assertThat(odo.vratiImeKlase()).isEqualTo("Kupac");
+        Assertions.assertThat(odo.vratiImeTabeleZaKlasu()).isEqualTo("Kupac");
     }
 
     @Test

@@ -66,7 +66,7 @@ public class SkiCentarTest {
 
     @Test
     public void vratiImeKlaseTest() {
-        Assertions.assertThat(odo.vratiImeKlase()).isEqualTo("SkiCentar");
+        Assertions.assertThat(odo.vratiImeTabeleZaKlasu()).isEqualTo("SkiCentar");
     }
 
     @Test

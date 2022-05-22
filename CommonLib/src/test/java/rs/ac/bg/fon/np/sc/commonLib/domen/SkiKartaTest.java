@@ -84,7 +84,7 @@ public class SkiKartaTest {
 
     @Test
     public void vratiImeKlaseTest() {
-        Assertions.assertThat(odo.vratiImeKlase()).isEqualTo("SkiKarta");
+        Assertions.assertThat(odo.vratiImeTabeleZaKlasu()).isEqualTo("SkiKarta");
     }
 
     @Test

@@ -76,7 +76,7 @@ public class ZicaraTest {
 
     @Test
     public void vratiImeKlaseTest() {
-        Assertions.assertThat(odo.vratiImeKlase()).isEqualTo("Zicara");
+        Assertions.assertThat(odo.vratiImeTabeleZaKlasu()).isEqualTo("Zicara");
     }
 
     @Test

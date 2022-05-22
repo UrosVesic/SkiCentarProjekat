@@ -79,7 +79,7 @@ public class SkiKarta implements OpstiDomenskiObjekat, Serializable {
     }
 
     @Override
-    public String vratiImeKlase() {
+    public String vratiImeTabeleZaKlasu() {
         return "SkiKarta";
     }
 

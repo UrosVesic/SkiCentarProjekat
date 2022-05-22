@@ -78,7 +78,7 @@ public class SkiCentar implements OpstiDomenskiObjekat {
     }
 
     @Override
-    public String vratiImeKlase() {
+    public String vratiImeTabeleZaKlasu() {
         return "SkiCentar";
     }
 

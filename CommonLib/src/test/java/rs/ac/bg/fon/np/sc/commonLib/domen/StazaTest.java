@@ -73,7 +73,7 @@ public class StazaTest {
 
     @Test
     public void vratiImeKlaseTest() {
-        Assertions.assertThat(odo.vratiImeKlase()).isEqualTo("Staza");
+        Assertions.assertThat(odo.vratiImeTabeleZaKlasu()).isEqualTo("Staza");
     }
 
     @Test

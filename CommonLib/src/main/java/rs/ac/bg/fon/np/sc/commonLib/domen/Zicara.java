@@ -93,7 +93,7 @@ public class Zicara implements OpstiDomenskiObjekat, Serializable {
     }
 
     @Override
-    public String vratiImeKlase() {
+    public String vratiImeTabeleZaKlasu() {
         return "Zicara";
     }
 

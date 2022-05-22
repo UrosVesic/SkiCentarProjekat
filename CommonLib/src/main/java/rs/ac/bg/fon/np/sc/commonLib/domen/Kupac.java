@@ -61,7 +61,7 @@ public class Kupac implements Serializable, OpstiDomenskiObjekat {
     }
 
     @Override
-    public String vratiImeKlase() {
+    public String vratiImeTabeleZaKlasu() {
         return "Kupac";
     }
 

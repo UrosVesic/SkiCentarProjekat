@@ -76,7 +76,7 @@ public class SkiPasTest {
 
     @Test
     public void vratiImeKlaseTest() {
-        Assertions.assertThat(odo.vratiImeKlase()).isEqualTo("SkiPas");
+        Assertions.assertThat(odo.vratiImeTabeleZaKlasu()).isEqualTo("SkiPas");
     }
 
     @Test

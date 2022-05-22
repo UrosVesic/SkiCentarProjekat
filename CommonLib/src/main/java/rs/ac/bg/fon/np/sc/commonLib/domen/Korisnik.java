@@ -114,7 +114,7 @@ public class Korisnik implements OpstiDomenskiObjekat{
     }
 
     @Override
-    public String vratiImeKlase() {
+    public String vratiImeTabeleZaKlasu() {
         return "Korisnik";
     }
 
