@@ -108,7 +108,7 @@ public class StavkaSkiPasa implements OpstiDomenskiObjekat, Serializable {
         if (zavrsetakVazenja != null) {
             this.zavrsetakVazenja = java.sql.Date.valueOf(sm.format(dDatumZ));
         }
-        return (skiPas == null ? null : skiPas.getSifraSkiPasa()) + ", " + vrednostStavke + ", " + (pocetakVazenja == null ? null : "'" + pocetakVazenja + "'")
+        return (skiPas == null ? null : skiPas.getSifraSkiPasa()) + ", " + redniBroj + ", " + vrednostStavke + ", " + (pocetakVazenja == null ? null : "'" + pocetakVazenja + "'")
                 + ", " + (zavrsetakVazenja == null ? null : "'" + zavrsetakVazenja + "'") + ", " + (skiKarta == null ? null : skiKarta.getSifraSkiKarte());
     }
 
@@ -117,19 +117,19 @@ public class StavkaSkiPasa implements OpstiDomenskiObjekat, Serializable {
         SimpleDateFormat sm = new SimpleDateFormat("yyyy-MM-dd");
         Date dDatumZ = zavrsetakVazenja;
         Date dDatumP = pocetakVazenja;
-         if (pocetakVazenja != null) {
+        if (pocetakVazenja != null) {
             this.pocetakVazenja = java.sql.Date.valueOf(sm.format(dDatumP));
         }
         if (zavrsetakVazenja != null) {
             this.zavrsetakVazenja = java.sql.Date.valueOf(sm.format(dDatumZ));
         }
         return "sifraSkiPasa= " + (skiPas == null ? null : skiPas.getSifraSkiPasa()) + ", " + "vrednostStavke = "
-                + vrednostStavke + ", " + "pocetakVazenja = " + (pocetakVazenja == null ? null : "'" + pocetakVazenja + "'") + ", " + "zavrsetakVazenja = "
+                + vrednostStavke + ", " + "rb = " + redniBroj + ", " + "pocetakVazenja = " + (pocetakVazenja == null ? null : "'" + pocetakVazenja + "'") + ", " + "zavrsetakVazenja = "
                 + (zavrsetakVazenja == null ? null : "'" + zavrsetakVazenja + "'") + ", " + "sifraSkiKarte = " + (skiKarta == null ? null : skiKarta.getSifraSkiKarte());
     }
 
     @Override
-    public String vratiImeKlase() {
+    public String vratiImeTabeleZaKlasu() {
         return "StavkaSkiPasa";
     }
 
@@ -153,7 +153,7 @@ public class StavkaSkiPasa implements OpstiDomenskiObjekat, Serializable {
 
     @Override
     public String vratiNazivPK() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return "rb";
     }
 
     @Override
@@ -225,7 +225,7 @@ public class StavkaSkiPasa implements OpstiDomenskiObjekat, Serializable {
 
     @Override
     public String vratiImenaAtrubita() {
-        return "sifraSkiPasa, vrednostStavke, pocetakVazenja, zavrsetakVazenja, sifraSkiKarte";
+        return "sifraSkiPasa, rb, vrednostStavke, pocetakVazenja, zavrsetakVazenja, sifraSkiKarte";
     }
 
 }
