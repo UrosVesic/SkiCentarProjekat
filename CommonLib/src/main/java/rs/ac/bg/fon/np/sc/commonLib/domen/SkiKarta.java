@@ -9,13 +9,25 @@ import java.sql.SQLException;
 
 public class SkiKarta implements OpstiDomenskiObjekat, Serializable {
 
+    /**
+     * Jedinstveni identifikator ski karte u bazi
+     */
     @Expose
     private long sifraSkiKarte;
+    /**
+     * Vrsta ski karte
+     */
     @SerializedName("vrstaSkiKarte")
     @Expose
     private VrstaSkiKarte vrstaSkiKarte;
+    /**
+     * Cena ski karte u dinarima
+     */
     @Expose
     private BigDecimal cenaSkiKarte;
+    /**
+     * Ski centar za koji vazi ski karta
+     */
     @Expose
     private SkiCentar skiCentar;
 
@@ -33,34 +45,75 @@ public class SkiKarta implements OpstiDomenskiObjekat, Serializable {
         this.skiCentar = skiCentar;
     }
 
+    /**
+     * Vraca vrednost sifre ski karte
+     *
+     * @return Sifru ski karte kao long
+     */
     public long getSifraSkiKarte() {
         return sifraSkiKarte;
     }
 
+    /**
+     * Postavlja vrednost sifre Ski karte na zadatu vrednost
+     *
+     * @param sifraSkiKarte vrednost na koju treba postaviti polje sifraSkiKarte
+     */
     public void setSifraSkiKarte(long sifraSkiKarte) {
         this.sifraSkiKarte = sifraSkiKarte;
     }
 
+    /**
+     * Vraca vrstu ski karte
+     *
+     * @return Vrstu ski karte kao Enum VrstaSkiKarte
+     */
     public VrstaSkiKarte getVrstaSkiKarte() {
         return vrstaSkiKarte;
     }
 
+    /**
+     * Postavlja vrednost vrste ski karte na zadatu vrednost
+     *
+     * @param vrstaSkiKarte enum vrednost na koju treba posstaviti polje
+     * vrstaSkiKarte
+     */
     public void setVrstaSkiKarte(VrstaSkiKarte vrstaSkiKarte) {
         this.vrstaSkiKarte = vrstaSkiKarte;
     }
 
+    /**
+     * Vraca cenu ski karte u dinarima
+     *
+     * @return Cena ski karte kao BigDecimal
+     */
     public BigDecimal getCenaSkiKarte() {
         return cenaSkiKarte;
     }
 
+    /**
+     * Postavlja cenu ski karte na zadatu vrednost
+     *
+     * @param cenaSkiKarte vrednost na koju treba postaviti polje cenaSkiKarteФ
+     */
     public void setCenaSkiKarte(BigDecimal cenaSkiKarte) {
         this.cenaSkiKarte = cenaSkiKarte;
     }
 
+    /**
+     * Vraca ski centar za koji vazi ski karta
+     *
+     * @return Ski centar kao objekat klase SkiCentar
+     */
     public SkiCentar getSkiCentar() {
         return skiCentar;
     }
 
+    /**
+     * Postavlja vrednost ski centra na zadatu vrednost
+     *
+     * @param skiCentar Vrednost na koju treba postaviti polje skiCentar
+     */
     public void setSkiCentar(SkiCentar skiCentar) {
         this.skiCentar = skiCentar;
     }

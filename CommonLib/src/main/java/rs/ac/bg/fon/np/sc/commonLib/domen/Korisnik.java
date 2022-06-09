@@ -10,14 +10,31 @@ import java.sql.SQLException;
 import java.util.Objects;
 
 /**
+ * Domenska klasa koja predstavlja korisnika sistema
  *
  * @author UrosVesic
  */
-public class Korisnik implements OpstiDomenskiObjekat{
-     private long id;
+public class Korisnik implements OpstiDomenskiObjekat {
+
+    /**
+     * Jedinsveni identifikator korisnika u bazi podataka
+     */
+    private long id;
+    /**
+     * Ime korisnika
+     */
     private String ime;
+    /**
+     * Prezime korisnika
+     */
     private String prezime;
+    /**
+     * Email korisnika
+     */
     private String email;
+    /**
+     * Sifra korisnika
+     */
     private String sifra;
 
     public Korisnik() {
@@ -38,51 +55,112 @@ public class Korisnik implements OpstiDomenskiObjekat{
         this.sifra = sifra;
     }
 
+    /**
+     * Vraca vrednost id-a
+     *
+     * @return id kao long
+     */
     public long getId() {
         return id;
     }
 
+    /**
+     * Postavlja vrednost id-a na zadatu vrednost
+     *
+     * @param id vrednost na koju treba postaviti polje id
+     */
     public void setId(long id) {
         this.id = id;
     }
 
+    /**
+     * Vraca vrednost sifre
+     *
+     * @return sifru kao String
+     */
     public String getSifra() {
         return sifra;
     }
 
+    /**
+     * Postavlja vrednost sifre na zadatu vrednost
+     *
+     * @param sifra vrednost na koju treba postaviti polje sifra
+     */
     public void setSifra(String sifra) {
         this.sifra = sifra;
     }
 
+    /**
+     * Vraca ime korisnika
+     *
+     * @return Ime kao String
+     */
     public String getIme() {
         return ime;
     }
 
+    /**
+     * Postavlja vrednost imena na zadatu vrednost
+     *
+     * @param ime vrednost na koju treba postaviti polje ime
+     */
     public void setIme(String ime) {
         this.ime = ime;
     }
 
+    /**
+     * Vraca prezime korisnika
+     *
+     * @return Prezime kao String
+     */
     public String getPrezime() {
         return prezime;
     }
 
+    /**
+     * Postavlja vrednost prezimena na zadatu vrednost
+     *
+     * @param ime vrednost na koju treba postaviti polje prezime
+     */
     public void setPrezime(String prezime) {
         this.prezime = prezime;
     }
 
+    /**
+     * Vraca email korisnika
+     *
+     * @return Email kao String
+     */
     public String getEmail() {
         return email;
     }
 
+    /**
+     * Postavlja vrednost email-a na zadatu vrednost
+     *
+     * @param email vrednost na koju treba postaviti polje email
+     */
     public void setEmail(String email) {
         this.email = email;
     }
-
+    /**
+     * Vraca sve podatke o korisniku u jednom Stringu
+     * @return String sa svim podacima o korisniku
+     */
     @Override
     public String toString() {
         return ime + " " + prezime;
     }
-
+    /**
+     * Poredi korisnike po atributu emaol
+     * @param obj objekat sa kojim se poredi this objekat
+     * @return 
+	 * <ul>
+	 * <li>true - email-ovi isti</li>
+	 * <li>false - ako su email-ovi razliciti</li>
+	 * </ul>
+     */
     @Override
     public boolean equals(Object obj) {
         if (this == obj) {

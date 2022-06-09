@@ -12,16 +12,35 @@ import java.util.List;
 
 public class SkiPas implements OpstiDomenskiObjekat, Serializable {
 
+    /**
+     * Jedinstveni identifikator ski pasa u bazi
+     */
     @Expose
     private long sifraSkiPasa;
+    /**
+     * Ukupna cena ski pasa izracunata na osnovu cena stavki
+     */
     @Expose
     private BigDecimal ukupnaCena;
+    /**
+     * Kupac kome se izdaje ski pas
+     */
     @Expose
     private Kupac kupac;
+    /**
+     * Datum kada se izdaje ski pas
+     */
     @Expose
     private Date datumIzdavanja;
+    /**
+     * Sezona u kojoj vazi ski pas u formatu yyyy/yyyy. Zavisi od datuma
+     * izdavanja ski pasa.
+     */
     @Expose
     private String sezona;
+    /**
+     * Lista stavki ski pasa
+     */
     @Expose
     private List<StavkaSkiPasa> stavkeSkiPasa;
 
@@ -46,42 +65,86 @@ public class SkiPas implements OpstiDomenskiObjekat, Serializable {
         this.stavkeSkiPasa = stavkeSkiPasa;
     }
 
+    /**
+     * Vraca listu stavki ski pasa
+     *
+     * @return Listu stavki kao List
+     */
     public List<StavkaSkiPasa> getStavkeSkiPasa() {
         return stavkeSkiPasa;
     }
 
+    /**
+     * Postavlja listu stavki na zadatu vrednost
+     *
+     * @param stavkeSkiPasa Vrednost na koju treba postaviti polje stavke ski
+     * pasa
+     */
     public void setStavkeSkiPasa(List<StavkaSkiPasa> stavkeSkiPasa) {
         this.stavkeSkiPasa = stavkeSkiPasa;
     }
 
+    /**
+     * Vraca vrednost sifre ski pasa
+     *
+     * @return sifra ski pasa kao long
+     */
     public long getSifraSkiPasa() {
         return sifraSkiPasa;
     }
-
+     /**
+     * Postavlja vrednost sifre Ski pasa na zadatu vrednost
+     *
+     * @param sifraSkiPasa vrednost na koju treba postaviti polje sifraSkiPasa
+     */
     public void setSifraSkiPasa(long sifraSkiPasa) {
         this.sifraSkiPasa = sifraSkiPasa;
     }
 
+    /**
+     * Vraca ukupnu cenu ski pasa izracunatu na osnovu cena stavki
+     *
+     * @return Ukupnu cenu kao BigDecimal
+     */
     public BigDecimal getUkupnaCena() {
         return ukupnaCena;
     }
-
+    /**
+     * Postavlja vrednost ukupne cene na zadatu vrednost
+     * @param ukupnaCena Vrednost na koju treba postaviti polje ukupnaCena
+     */
     public void setUkupnaCena(BigDecimal ukupnaCena) {
         this.ukupnaCena = ukupnaCena;
     }
 
+    /**
+     * Vraca kupca kome se izdaje ski pas
+     *
+     * @return Kupca kao objekat klase Kupac
+     */
     public Kupac getKupac() {
         return kupac;
     }
-
+    /**
+     * Postavlja vrednost polja Kupac na zadatu vrednost
+     * @param kupac Vrednost na koju treba postaviti polje kupac
+     */
     public void setKupac(Kupac kupac) {
         this.kupac = kupac;
     }
 
+    /**
+     * Vraca datum izdavanja ski pasa
+     *
+     * @return Datum izdavanja kao java.util.Date
+     */
     public Date getDatumIzdavanja() {
         return datumIzdavanja;
     }
-
+    /**
+     * Postavlja vrednost datuma izdavanja na zadatu vrednost
+     * @param datumIzdavanja Vrednost na koju treba postaviti polje datumIzdavanja
+     */
     public void setDatumIzdavanja(Date datumIzdavanja) {
         this.datumIzdavanja = datumIzdavanja;
     }

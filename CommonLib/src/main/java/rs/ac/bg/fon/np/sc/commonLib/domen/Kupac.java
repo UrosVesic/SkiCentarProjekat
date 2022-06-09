@@ -17,12 +17,24 @@ import java.util.Objects;
  */
 public class Kupac implements Serializable, OpstiDomenskiObjekat {
 
+    /**
+     * Jedinstveni identifikator kupca u bazi podataka
+     */
     @Expose
     private long idKupca;
+    /**
+     * Broj licne karte kupca
+     */
     @Expose
     private String brojLK;
+    /**
+     * Ime kupca
+     */
     @Expose
     private String ime;
+    /**
+     * Prezime kupca
+     */
     @Expose
     private String prezime;
 
@@ -103,10 +115,20 @@ public class Kupac implements Serializable, OpstiDomenskiObjekat {
         this.setIdKupca(id);
     }
 
+    /**
+     * Vraca vrednost id-a
+     *
+     * @return id kao long
+     */
     public long getIdKupca() {
         return idKupca;
     }
 
+    /**
+     * Postavlja vrednost id-a na zadatu vrednost
+     *
+     * @param idKupca vrednost na koju treba postaviti polje id
+     */
     public void setIdKupca(long idKupca) {
         this.idKupca = idKupca;
     }
@@ -119,33 +141,62 @@ public class Kupac implements Serializable, OpstiDomenskiObjekat {
         this.brojLK = brojLK;
     }
 
+    /**
+     * Vraca ime korisnika
+     *
+     * @return Ime kao String
+     */
     public String getIme() {
         return ime;
     }
 
+    /**
+     * Postavlja vrednost imena na zadatu vrednost
+     *
+     * @param ime vrednost na koju treba postaviti polje ime
+     */
     public void setIme(String ime) {
         this.ime = ime;
     }
 
+    /**
+     * Vraca prezime korisnika
+     *
+     * @return Prezime kao String
+     */
     public String getPrezime() {
         return prezime;
     }
 
+    /**
+     * Postavlja vrednost prezimena na zadatu vrednost
+     *
+     * @param prezime vrednost na koju treba postaviti polje prezime
+     */
     public void setPrezime(String prezime) {
         this.prezime = prezime;
     }
 
+    /**
+     * Vraca sve podatke o kupcu u jednom Stringu
+     *
+     * @return String sa svim podacima o kupcu
+     */
     @Override
     public String toString() {
         return ime + " " + prezime;
     }
 
-    @Override
-    public int hashCode() {
-        int hash = 3;
-        return hash;
-    }
-
+    /**
+     * Poredi kupce po atributu brojLK
+     *
+     * @param obj objekat sa kojim se poredi this objekat
+     * @return
+     * <ul>
+     * <li>true - ako su brojevi licne karte isti</li>
+     * <li>false - ako brojevi licne karte nisu isti</li>
+     * </ul>
+     */
     @Override
     public boolean equals(Object obj) {
         if (this == obj) {

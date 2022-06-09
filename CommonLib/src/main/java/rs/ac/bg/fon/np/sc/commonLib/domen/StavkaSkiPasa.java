@@ -11,15 +11,34 @@ import java.util.Objects;
 
 public class StavkaSkiPasa implements OpstiDomenskiObjekat, Serializable {
 
+    /**
+     * SkiPas kojem pripada stavka
+     */
     private SkiPas skiPas;
+    /**
+     * Redni broj stavke na ski pasu
+     */
     @Expose
     private long redniBroj;
+    /**
+     * Vrednost stavke koja je jednaka ceni ski karte
+     */
     @Expose
     private BigDecimal vrednostStavke;
+    /**
+     * Datum pocetka vazenja stavke
+     */
     @Expose
     private Date pocetakVazenja;
+    /**
+     * Zavrsetak vazenja stavke. Zavisi od datuma pocetka vazenja i trajanja ski
+     * karte
+     */
     @Expose
     private Date zavrsetakVazenja;
+    /**
+     * Ski karta na koju se odnosi stavka
+     */
     @Expose
     private SkiKarta skiKarta;
 
@@ -123,8 +142,8 @@ public class StavkaSkiPasa implements OpstiDomenskiObjekat, Serializable {
         if (zavrsetakVazenja != null) {
             this.zavrsetakVazenja = java.sql.Date.valueOf(sm.format(dDatumZ));
         }
-        return "sifraSkiPasa= " + (skiPas == null ? null : skiPas.getSifraSkiPasa()) + ", " + "vrednostStavke = "
-                + vrednostStavke + ", " + "rb = " + redniBroj + ", " + "pocetakVazenja = " + (pocetakVazenja == null ? null : "'" + pocetakVazenja + "'") + ", " + "zavrsetakVazenja = "
+        return "sifraSkiPasa= " + (skiPas == null ? null : skiPas.getSifraSkiPasa()) + ", " + "rb=" + redniBroj + ", " + "vrednostStavke = "
+                + vrednostStavke + ", " + "pocetakVazenja = " + (pocetakVazenja == null ? null : "'" + pocetakVazenja + "'") + ", " + "zavrsetakVazenja = "
                 + (zavrsetakVazenja == null ? null : "'" + zavrsetakVazenja + "'") + ", " + "sifraSkiKarte = " + (skiKarta == null ? null : skiKarta.getSifraSkiKarte());
     }
 
