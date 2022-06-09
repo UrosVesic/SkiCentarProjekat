@@ -46,9 +46,12 @@ public class StavkaSkiPasaTest {
 
     @ParameterizedTest
     @CsvFileSource(resources = "/stavkaskipasa/vrati_vrednosti_atributa.csv")
-    public void vratiVrednostiAtributaTest(String sifraSkiPasa, BigDecimal cena, Date pocetakVazenja, Date zavrsetakVazenja, String sifraSkiKarte, String rezultat) {
+    public void vratiVrednostiAtributaTest(String sifraSkiPasa, String rb, BigDecimal cena, Date pocetakVazenja, Date zavrsetakVazenja, String sifraSkiKarte, String rezultat) {
         if (sifraSkiPasa != null) {
             odo.setSkiPas(new SkiPas(Long.parseLong(sifraSkiPasa)));
+        }
+        if (rb != null) {
+            odo.setRedniBroj(Long.parseLong(rb));
         }
         odo.setVrednostStavke(cena);
         odo.setPocetakVazenja(pocetakVazenja);
@@ -62,14 +65,17 @@ public class StavkaSkiPasaTest {
 
     @Test
     public void vratiImenaAtrubitaTest() {
-        Assertions.assertThat(odo.vratiImenaAtrubita()).isEqualTo("sifraSkiPasa, vrednostStavke, pocetakVazenja, zavrsetakVazenja, sifraSkiKarte");
+        Assertions.assertThat(odo.vratiImenaAtrubita()).isEqualTo("sifraSkiPasa, rb, vrednostStavke, pocetakVazenja, zavrsetakVazenja, sifraSkiKarte");
     }
 
     @ParameterizedTest
     @CsvFileSource(resources = "/stavkaskipasa/postavi_vrednosti_atributa.csv")
-    public void postaviVrednostiAtributaTest(String sifraSkiPasa, BigDecimal cena, Date pocetakVazenja, Date zavrsetakVazenja, String sifraSkiKarte, String rezultat) {
+    public void postaviVrednostiAtributaTest(String sifraSkiPasa, String rb, BigDecimal cena, Date pocetakVazenja, Date zavrsetakVazenja, String sifraSkiKarte, String rezultat) {
         if (sifraSkiPasa != null) {
             odo.setSkiPas(new SkiPas(Long.parseLong(sifraSkiPasa)));
+        }
+        if (rb != null) {
+            odo.setRedniBroj(Long.parseLong(rb));
         }
         odo.setVrednostStavke(cena);
         odo.setPocetakVazenja(pocetakVazenja);
