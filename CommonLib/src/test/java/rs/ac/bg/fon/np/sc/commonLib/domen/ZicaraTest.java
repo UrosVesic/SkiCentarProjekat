@@ -16,8 +16,6 @@ import org.junit.jupiter.params.provider.CsvSource;
 import org.mockito.BDDMockito;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
-import rs.ac.bg.fon.np.sc.commonlib.domen.Zicara;
-import rs.ac.bg.fon.np.sc.commonlib.domen.SkiCentar;
 
 /**
  *

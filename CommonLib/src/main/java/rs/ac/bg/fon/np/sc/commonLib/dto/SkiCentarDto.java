@@ -3,13 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package rs.ac.bg.fon.np.sc.commonlib.dto;
+package rs.ac.bg.fon.np.sc.commonLib.dto;
 
 import com.google.gson.annotations.Expose;
 import java.util.List;
-import rs.ac.bg.fon.np.sc.commonlib.domen.SkiCentar;
-import rs.ac.bg.fon.np.sc.commonlib.domen.Staza;
-import rs.ac.bg.fon.np.sc.commonlib.domen.Zicara;
+import rs.ac.bg.fon.np.sc.commonLib.domen.SkiCentar;
+import rs.ac.bg.fon.np.sc.commonLib.domen.Staza;
+import rs.ac.bg.fon.np.sc.commonLib.domen.Zicara;
 
 /**
  *

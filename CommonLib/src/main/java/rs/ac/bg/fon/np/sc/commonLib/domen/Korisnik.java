@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package rs.ac.bg.fon.np.sc.commonlib.domen;
+package rs.ac.bg.fon.np.sc.commonLib.domen;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -216,7 +216,7 @@ public class Korisnik implements OpstiDomenskiObjekat {
     }
 
     @Override
-    public rs.ac.bg.fon.np.sc.commonlib.domen.OpstiDomenskiObjekat kreirajInstancu() {
+    public OpstiDomenskiObjekat kreirajInstancu() {
         // TODO Auto-generated method stub
         return new Korisnik();
     }
@@ -228,13 +228,13 @@ public class Korisnik implements OpstiDomenskiObjekat {
     }
 
     @Override
-    public rs.ac.bg.fon.np.sc.commonlib.domen.OpstiDomenskiObjekat vratiVezaniObjekat(int i) {
+    public OpstiDomenskiObjekat vratiVezaniObjekat(int i) {
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
     @Override
-    public void postaviVrednostVezanogObjekta(rs.ac.bg.fon.np.sc.commonlib.domen.OpstiDomenskiObjekat vezo, int i) {
+    public void postaviVrednostVezanogObjekta(OpstiDomenskiObjekat vezo, int i) {
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Not supported yet.");
     }

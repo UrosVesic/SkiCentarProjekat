@@ -1,4 +1,4 @@
-package rs.ac.bg.fon.np.sc.commonlib.domen;
+package rs.ac.bg.fon.np.sc.commonLib.domen;
 
 import java.io.Serializable;
 import java.sql.ResultSet;

@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package rs.ac.bg.fon.np.sc.commonlib.validator;
+package rs.ac.bg.fon.np.sc.commonLib.validator;
 
 /**
  *

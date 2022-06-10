@@ -1,4 +1,4 @@
-package rs.ac.bg.fon.np.sc.commonlib.domen;
+package rs.ac.bg.fon.np.sc.commonLib.domen;
 
 import com.google.gson.annotations.Expose;
 import java.io.Serializable;
