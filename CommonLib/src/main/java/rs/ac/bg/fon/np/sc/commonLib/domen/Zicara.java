@@ -18,6 +18,11 @@ public class Zicara implements OpstiDomenskiObjekat, Serializable {
 
     }
 
+    public Zicara(long SifraZicare, String nazivZicare) {
+        this.SifraZicare = SifraZicare;
+        this.nazivZicare = nazivZicare;
+    }
+
     public Zicara(long SifraZicare, String NazivZicare, String RadnoVreme, int Kapacitet, boolean UFunkciji,
             SkiCentar skiCentar) {
         this.SifraZicare = SifraZicare;
@@ -159,8 +164,6 @@ public class Zicara implements OpstiDomenskiObjekat, Serializable {
         return "nazivZicare, radnoVreme, kapacitet, UFunkciji, sifraSkiCentra";
     }
 
-   
-
     @Override
     public boolean equals(Object obj) {
         if (this == obj) {
@@ -178,7 +181,5 @@ public class Zicara implements OpstiDomenskiObjekat, Serializable {
         }
         return true;
     }
-
-    
 
 }
