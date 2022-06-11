@@ -54,6 +54,14 @@ public class StavkaSkiPasa implements OpstiDomenskiObjekat, Serializable {
         this.redniBroj = redniBroj;
     }
 
+    public StavkaSkiPasa(SkiPas skiPas, long redniBroj, Date pocetakVazenja) {
+        this.skiPas = skiPas;
+        this.redniBroj = redniBroj;
+        this.pocetakVazenja = pocetakVazenja;
+    }
+    
+    
+
     public StavkaSkiPasa(SkiPas skiPas, long redniBroj, BigDecimal vrednostStavke, Date pocetakVazenja,
             Date zavrsetakVazenja, SkiKarta skiKarta) {
         this.skiPas = skiPas;
