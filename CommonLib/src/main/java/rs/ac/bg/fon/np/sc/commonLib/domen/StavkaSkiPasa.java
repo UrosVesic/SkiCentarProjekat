@@ -59,8 +59,6 @@ public class StavkaSkiPasa implements OpstiDomenskiObjekat, Serializable {
         this.redniBroj = redniBroj;
         this.pocetakVazenja = pocetakVazenja;
     }
-    
-    
 
     public StavkaSkiPasa(SkiPas skiPas, long redniBroj, BigDecimal vrednostStavke, Date pocetakVazenja,
             Date zavrsetakVazenja, SkiKarta skiKarta) {
@@ -72,55 +70,115 @@ public class StavkaSkiPasa implements OpstiDomenskiObjekat, Serializable {
         this.skiKarta = skiKarta;
     }
 
+    /**
+     * Vraca ski kartu na koju se odnosi stavka
+     *
+     * @return Ski kartu kao objekat klase SkiKarta
+     */
     public SkiKarta getSkiKarta() {
         return skiKarta;
     }
 
+    /**
+     * Postavlja vrednost polja skiKarta na zadatu vrednost
+     *
+     * @param skiKarta Vrednost koju treba postaviti na polje skiKarta
+     */
     public void setSkiKarta(SkiKarta skiKarta) {
         this.skiKarta = skiKarta;
     }
 
+    /**
+     * Vraca ski pas na kom se nalazi stavka
+     *
+     * @return ski pas kao objekat klase SkiPas
+     */
     public SkiPas getSkiPas() {
         return skiPas;
     }
 
+    /**
+     * Postavlja vrednost polja skiPas na zadatu vrednost
+     *
+     * @param skiPas Vrednost koju treba postaviti na polje skiPas
+     */
     public void setSkiPas(SkiPas skiPas) {
         this.skiPas = skiPas;
     }
 
+    /**
+     * Vraca redni broj stavke na ski pasu
+     *
+     * @return redniBroj kao int
+     */
     public long getRedniBroj() {
         return redniBroj;
     }
 
+    /**
+     * Postavlja vrednost rednog broja na zadatu vrednost
+     *
+     * @param redniBroj Vrednost na koju treba postaviti polje redni broj
+     */
     public void setRedniBroj(long redniBroj) {
         this.redniBroj = redniBroj;
     }
 
+    /**
+     * Vraca vrednost stavke koja je jednaka ceni ski karte
+     *
+     * @return vrednostStavke kao BigDecimal
+     * @see rs.ac.bg.fon.np.sc.commonLib.domen.SkiKarta
+     */
     public BigDecimal getVrednostStavke() {
         return vrednostStavke;
     }
 
+    /**
+     * Postavlja vrednost polja vrednostStavke na zadatu vrednost
+     *
+     * @param vrednostStavke Vrednost na koju treba postaviti polje
+     * vrednostStavke
+     */
     public void setVrednostStavke(BigDecimal vrednostStavke) {
         this.vrednostStavke = vrednostStavke;
     }
 
+    /**
+     * Vraca pocetak vazenja stavke ski pasa
+     *
+     * @return Pocetak vazenja kao java.util.Date
+     */
     public Date getPocetakVazenja() {
         return pocetakVazenja;
     }
 
+    /**
+     * Postavlja vrednost polja pocetakVazenja na zadatu vrednost
+     *
+     * @param pocetakVazenja Vrednost na koju treba postaviti polje
+     * pocetakVazenja
+     */
     public void setPocetakVazenja(Date pocetakVazenja) {
-        //SimpleDateFormat sm = new SimpleDateFormat("yyyy-MM-dd");
-        //Date dDatum = pocetakVazenja;
         this.pocetakVazenja = pocetakVazenja;
     }
 
+    /**
+     * Vraca zavrsetak vazenja stavke ski pasa
+     *
+     * @return Zavrsetak vazenja kao java.util.Date
+     */
     public Date getZavrsetakVazenja() {
         return zavrsetakVazenja;
     }
 
+    /**
+     * Postavlja vrednost polja zavrsetakVazenja na zadatu vrednost
+     *
+     * @param zavrsetakVazenja Vrednost na koju treba postaviti polje
+     * zavrsetakVazenja
+     */
     public void setZavrsetakVazenja(Date zavrsetakVazenja) {
-        //SimpleDateFormat sm = new SimpleDateFormat("yyyy-MM-dd");
-        //Date dDatum = zavrsetakVazenja;
         this.zavrsetakVazenja = zavrsetakVazenja;
     }
 

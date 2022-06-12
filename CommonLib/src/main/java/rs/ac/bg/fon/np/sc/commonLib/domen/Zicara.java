@@ -7,11 +7,29 @@ import java.util.Objects;
 
 public class Zicara implements OpstiDomenskiObjekat, Serializable {
 
+    /**
+     * Jedinstveni identifikator zicare u bazi
+     */
     private long SifraZicare;
+    /**
+     * Naziv zicare
+     */
     private String nazivZicare;
+    /**
+     * Radno vreme zicare
+     */
     private String radnoVreme;
+    /**
+     * Broj skijasa koji zicara moze da poveze do vrha u toku jednog sata
+     */
     private int kapacitet;
+    /**
+     * Da li je zicara u funkciji
+     */
     private boolean UFunkciji;
+    /**
+     * Ski centar u kom se nalazi zicara
+     */
     private SkiCentar skiCentar;
 
     public Zicara() {
@@ -33,50 +51,111 @@ public class Zicara implements OpstiDomenskiObjekat, Serializable {
         this.skiCentar = skiCentar;
     }
 
+    /**
+     * Vraca sifru zicare koja joj je dodeljena u bazi
+     *
+     * @return Sifra zicare kao long
+     */
     public long getSifraZicare() {
         return SifraZicare;
     }
 
+    /**
+     * Postavlja vrednost polja sifraZicare na zadatu vrednost
+     *
+     * @param SifraZicare Vrednost na koju treba postaviti polje sifraZicare
+     */
     public void setSifraZicare(long SifraZicare) {
         this.SifraZicare = SifraZicare;
     }
 
+    /**
+     * Vraca naziv zicare
+     *
+     * @return Naziv zicare kao String
+     */
     public String getNazivZicare() {
         return nazivZicare;
     }
 
+    /**
+     * Postavlja vrednost polja nazivZicare na zadatu vrednost
+     *
+     * @param nazivZicare Vrednost na koju treba postaviti polje nazivZicare
+     */
     public void setNazivZicare(String nazivZicare) {
         this.nazivZicare = nazivZicare;
     }
 
+    /**
+     * Vraca radno vreme zicare
+     *
+     * @return Radno vreme zicare kao String u formatu HH-HH
+     */
     public String getRadnoVreme() {
         return radnoVreme;
     }
 
+    /**
+     * Postavlja vrednost polja radnoVreme na zadatu vrednost
+     *
+     * @param radnoVreme Vrednost na koju treba postaviti polje radnoVreme
+     */
     public void setRadnoVreme(String radnoVreme) {
         this.radnoVreme = radnoVreme;
     }
 
+    /**
+     * Vraca kapacitet zicare
+     *
+     * @return Kapacitet kao int
+     */
     public int getKapacitet() {
         return kapacitet;
     }
 
+    /**
+     * Postavlja vrednost polja kapacitet na zadatu vrednost
+     *
+     * @param kapacitet Vrednost na koju treba postaviti polje kapacitet
+     */
     public void setKapacitet(int kapacitet) {
         this.kapacitet = kapacitet;
     }
 
+    /**
+     * Vraca boolean vrednost da li je zicara trenutno u funkciji
+     *
+     * @return <ul><li>true-ako je zicara u funkciji</li>
+     * <li>false-ako je zicara van funkcije</li></ul>
+     */
     public boolean isUFunkciji() {
         return UFunkciji;
     }
 
+    /**
+     * Postavlja vrednost polja UFunkciji na zadatu vrednost
+     *
+     * @param UFunkciji Vrednost na koju treba postaviti polje UFunkciji
+     */
     public void setUFunkciji(boolean UFunkciji) {
         this.UFunkciji = UFunkciji;
     }
 
+    /**
+     * Vraca ski centar u kome se nalazi zicara
+     *
+     * @return Ski centar kao objekat klase SkiCentar
+     */
     public SkiCentar getSkiCentar() {
         return skiCentar;
     }
 
+    /**
+     * Postavlja vrednost polja skiCentar na zadatu vrednost
+     *
+     * @param skiCentar Vrednost na koju treba postaviti polje skiCentar
+     */
     public void setSkiCentar(SkiCentar skiCentar) {
         this.skiCentar = skiCentar;
     }

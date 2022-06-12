@@ -6,10 +6,25 @@ import java.sql.SQLException;
 
 public class Staza implements OpstiDomenskiObjekat, Serializable {
 
+    /**
+     * Jedinstveni identifikator staze u bazi
+     */
     private long idStaze;
+    /**
+     * Oznaka staze
+     */
     private String brojStaze;
+    /**
+     * Naziv staze
+     */
     private String nazivStaze;
+    /**
+     * Tip staze(laka,srednja,teska)
+     */
     private String tipStaze;
+    /**
+     * Ski centar u kome se nalazi staza
+     */
     private SkiCentar skiCentar;
 
     public Staza() {
@@ -28,18 +43,38 @@ public class Staza implements OpstiDomenskiObjekat, Serializable {
         this.skiCentar = skiCentar;
     }
 
+    /**
+     * Vraca jedinstveni identifikator staze u bazi
+     *
+     * @return idStaze kao long
+     */
     public long getIdStaze() {
         return idStaze;
     }
 
+    /**
+     * Postavlja vrednost idStaze na zadatu vrednost
+     *
+     * @param idStaze Vrednost na koju treba postaviti polje idStaze
+     */
     public void setIdStaze(long idStaze) {
         this.idStaze = idStaze;
     }
 
+    /**
+     * Vraca oznaku staze
+     *
+     * @return brojStaze kao String
+     */
     public String getBrojStaze() {
         return brojStaze;
     }
 
+    /**
+     * Postavlja vrednost brojStaze na zadatu vrednost
+     *
+     * @param brojStaze Vrednost na koju treba postaviti polje brojStaze
+     */
     public void setBrojStaze(String brojStaze) {
         this.brojStaze = brojStaze;
     }
