@@ -8,6 +8,7 @@ package rs.ac.bg.fon.np.sc.commonLib.domen;
 import com.google.gson.annotations.SerializedName;
 
 /**
+ * Enum koji predstavlja vrstu ski karte odnosno broj dana njenog trajanja
  *
  * @author UrosVesic
  */
@@ -26,6 +27,9 @@ public enum VrstaSkiKarte {
     SESTODNEVNA(6),
     @SerializedName("Sedmodnevna")
     SEDMODNEVNA(7);
+    /**
+     * Broj dana trajanja ski karte
+     */
     private final int brojDana;
 
     private VrstaSkiKarte(int dani) {
