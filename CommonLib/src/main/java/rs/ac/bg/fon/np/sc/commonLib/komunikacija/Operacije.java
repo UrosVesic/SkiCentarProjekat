@@ -2,6 +2,11 @@ package rs.ac.bg.fon.np.sc.commonLib.komunikacija;
 
 import java.io.Serializable;
 
+/**
+ * Nazivi sistemskih operacija u sistemu
+ *
+ * @author UrosVesic
+ */
 public class Operacije implements Serializable {
 
     public static final int PRIJAVI_SE = 1;
