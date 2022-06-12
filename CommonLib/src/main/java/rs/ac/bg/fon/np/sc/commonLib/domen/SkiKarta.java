@@ -7,6 +7,11 @@ import java.math.BigDecimal;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+/**
+ * Domenska klasa koja predstavlja ski kartu
+ *
+ * @author UrosVesic
+ */
 public class SkiKarta implements OpstiDomenskiObjekat, Serializable {
 
     /**

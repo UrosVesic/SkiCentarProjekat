@@ -8,7 +8,10 @@ import java.sql.SQLException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Objects;
-
+/**
+ * Domenska klasa koja predstavlja stavku ski pasa koja se odnosi na ski karte
+ * @author UrosVesic
+ */
 public class StavkaSkiPasa implements OpstiDomenskiObjekat, Serializable {
 
     /**

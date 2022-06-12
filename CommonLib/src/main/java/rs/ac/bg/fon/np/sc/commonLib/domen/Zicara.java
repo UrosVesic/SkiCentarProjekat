@@ -5,6 +5,11 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Objects;
 
+/**
+ * Domenska klasa koja predstavlja zicaru u ski centru
+ *
+ * @author UrosVesic
+ */
 public class Zicara implements OpstiDomenskiObjekat, Serializable {
 
     /**

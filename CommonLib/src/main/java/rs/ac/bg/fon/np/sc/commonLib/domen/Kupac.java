@@ -12,6 +12,7 @@ import java.sql.SQLException;
 import java.util.Objects;
 
 /**
+ * Domenska klasa koja predstavlja kupca ski pasa
  *
  * @author UrosVesic
  */

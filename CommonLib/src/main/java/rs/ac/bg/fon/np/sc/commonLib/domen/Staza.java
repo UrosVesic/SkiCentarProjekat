@@ -4,6 +4,11 @@ import java.io.Serializable;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+/**
+ * Domenska klasa koja predstavlja stazu u ski centru
+ *
+ * @author UrosVesic
+ */
 public class Staza implements OpstiDomenskiObjekat, Serializable {
 
     /**

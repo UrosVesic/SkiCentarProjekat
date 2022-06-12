@@ -4,6 +4,12 @@ import com.google.gson.annotations.Expose;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+/**
+ * Domenska klasa koja predstavlja ski centar
+ *
+ * @author UrosVesic
+ */
+
 public class SkiCentar implements OpstiDomenskiObjekat {
 
     /**
@@ -106,8 +112,10 @@ public class SkiCentar implements OpstiDomenskiObjekat {
     public String getRadnoVreme() {
         return radnoVreme;
     }
+
     /**
      * Postavlja vrednost radnog vremena na zadatu vrednost
+     *
      * @param radnoVreme vrednost na koju treba postaviti polje radnoVreme
      */
     public void setRadnoVreme(String radnoVreme) {
@@ -153,6 +161,7 @@ public class SkiCentar implements OpstiDomenskiObjekat {
         sc.setNazivPlanine(rs.getString("nazivPlanine"));
         sc.setRadnoVreme(rs.getString("radnoVreme"));
     }
+
     /**
      * Vraca sve podatke o ski centru u jednom Stringu
      *
@@ -182,7 +191,8 @@ public class SkiCentar implements OpstiDomenskiObjekat {
     public OpstiDomenskiObjekat vratiVezaniObjekat(int i) {
         return null;
     }
-     /**
+
+    /**
      * Poredi ski centre po atributu sifra ski centra
      *
      * @param obj objekat sa kojim se poredi this objekat

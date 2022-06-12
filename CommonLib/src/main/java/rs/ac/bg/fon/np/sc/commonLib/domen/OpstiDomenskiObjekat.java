@@ -4,7 +4,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 /**
- * Interfejs koji nasledjuju sve domenske klase u sistemu.
+ * Interfejs koji je na vrhu hijerarhije domenskih klasa.
  *
  * @author UrosVesic
  */
@@ -134,6 +134,7 @@ public interface OpstiDomenskiObjekat {
     /**
      * Postavlja vrednost atributa koji odgovara primarnom kljucu odgovarajuce
      * tabele na zadatu vrednost
+     *
      * @param id vrednost primarnog kljuca
      */
     public void postaviVrednostPK(long id);

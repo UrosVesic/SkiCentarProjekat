@@ -9,7 +9,10 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
-
+/**
+ * Domenska klasa koja predstavlja ski pas
+ * @author UrosVesic
+ */
 public class SkiPas implements OpstiDomenskiObjekat, Serializable {
 
     /**
