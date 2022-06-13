@@ -7,13 +7,12 @@ package rs.ac.bg.fon.np.sc.commonLib.validator;
 
 /**
  *
- * @author Korisnik
+ * @author UrosVesic
  */
 public class ValidationException extends Exception {
 
     public ValidationException(String message) {
         super(message);
     }
-    
-    
+
 }

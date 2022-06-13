@@ -19,7 +19,7 @@ import rs.ac.bg.fon.np.sc.commonLib.domen.StavkaSkiPasa;
 
 /**
  *
- * @author Korisnik
+ * @author UrosVesic
  */
 public class Validator {
 
@@ -39,6 +39,7 @@ public class Validator {
         }
         return this;
     }
+
     public Validator validateNotNullOrEmpty(Collection value, String errorMessage) throws ValidationException {
         if (value == null || value.isEmpty()) {
             this.validationErros.add(errorMessage);
