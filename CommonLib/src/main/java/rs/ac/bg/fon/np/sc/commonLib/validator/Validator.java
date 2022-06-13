@@ -14,6 +14,7 @@ import java.util.Collection;
 import java.util.Date;
 import java.util.List;
 import java.util.stream.Collectors;
+import rs.ac.bg.fon.np.sc.commonLib.domen.OpstiDomenskiObjekat;
 import rs.ac.bg.fon.np.sc.commonLib.domen.SkiPas;
 import rs.ac.bg.fon.np.sc.commonLib.domen.StavkaSkiPasa;
 
@@ -36,6 +37,21 @@ public class Validator {
     public Validator validateNotNullOrEmpty(String value, String errorMessage) throws ValidationException {
         if (value == null || value.trim().isEmpty()) {
             this.validationErros.add(errorMessage);
+        }
+        return this;
+    }
+
+    public Validator validateFieldsNotNullOrEmpty(OpstiDomenskiObjekat odo) {
+        List<String> lista = new ArrayList<>();
+        try {
+            lista = odo.validirajPolja();
+        } catch (IllegalArgumentException ex) {
+            ex.printStackTrace();
+        } catch (IllegalAccessException ex) {
+            ex.printStackTrace();
+        }
+        if (!lista.isEmpty()) {
+            lista.forEach(poruka -> validationErros.add(poruka));
         }
         return this;
     }
@@ -91,6 +107,13 @@ public class Validator {
     public Validator throwIfInvalide() throws ValidationException {
         if (!validationErros.isEmpty()) {
             throw new ValidationException(this.validationErros.stream().collect(Collectors.joining("\n")));
+        }
+        return this;
+    }
+
+    public Validator throwIfInvalideRuntime() {
+        if (!validationErros.isEmpty()) {
+            throw new ValidationRuntimeException(this.validationErros.stream().collect(Collectors.joining("\n")));
         }
         return this;
     }
