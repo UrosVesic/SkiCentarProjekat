@@ -185,7 +185,7 @@ public class Kupac implements Serializable, OpstiDomenskiObjekat {
      */
     @Override
     public String toString() {
-        return ime + " " + prezime;
+        return ime + " " + prezime + " - " + brojLK;
     }
 
     /**

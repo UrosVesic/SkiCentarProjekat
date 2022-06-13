@@ -120,7 +120,8 @@ public class KupacTest {
     public void toStringTest() {
         odo.setIme("Uros");
         odo.setPrezime("Vesic");
-        Assertions.assertThat(odo.toString()).isEqualTo("Uros Vesic");
+        odo.setBrojLK("1234");
+        Assertions.assertThat(odo.toString()).isEqualTo("Uros Vesic - 1234");
 
     }
 
