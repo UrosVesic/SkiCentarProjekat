@@ -1,7 +1,10 @@
 package rs.ac.bg.fon.np.sc.commonLib.domen;
 
+import java.lang.reflect.Field;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Interfejs koji je na vrhu hijerarhije domenskih klasa.
@@ -138,5 +141,29 @@ public interface OpstiDomenskiObjekat {
      * @param id vrednost primarnog kljuca
      */
     public void postaviVrednostPK(long id);
+
+    /**
+     * Metoda proverava da li su sva polja nekog objekta razlicita od null i da
+     * li su String polja razlicita od praznog stringa.
+     *
+     * @return Listu Stringova sa porukama o tome koja su polja pogresno uneta
+     * @throws IllegalArgumentException
+     * @throws IllegalAccessException
+     */
+    public default List<String> validirajPolja() throws IllegalArgumentException, IllegalAccessException {
+        List<String> nullFields = new ArrayList<>();
+        Field[] polja = this.getClass().getDeclaredFields();
+        for (Field polje : polja) {
+            polje.setAccessible(true);
+            Object o = polje.get(this);
+            if (o == null) {
+                nullFields.add("Polje " + polje.getName() + " je obavezno");
+            }
+            if (o instanceof String && o.equals("")) {
+                nullFields.add("Polje " + polje.getName() + " je obavezno");
+            }
+        }
+        return nullFields;
+    }
 
 }
